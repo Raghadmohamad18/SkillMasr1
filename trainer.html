@@ -95,19 +95,19 @@ label{
 
 <h2>Coach Registration Form</h2>
 
-<form>
+<form id="coachForm">
 
 <label>Full Name</label>
-<input type="text" placeholder="Enter your full name"required>
-
+<input type="text" id="fullName" placeholder="Enter your full name" required>
+<label>Email</label>
+<input type="email" id="email" placeholder="Enter your email" required>
+    
 <label>Sport / Skill</label>
-<input type="text" placeholder="Football, Swimming, Coding..." required>
-
+<input type="text" id="sport" placeholder="Football, Swimming, Coding..." required>
 <label>Governorate</label>
 
-<select required>
-
-<option value="">Select Governorate</option>
+<select id="governorate" required>
+    <option value="">Select Governorate</option>
 
 <option>Alexandria</option>
 <option>Aswan</option>
@@ -140,19 +140,19 @@ label{
 </select>
 
 <label>Area</label>
-<input type="text" placeholder="Smouha">
+<input type="text" id="area" placeholder="Smouha">
 
 <label>Phone Number</label>
-<input type="tel" placeholder="01XXXXXXXXX">
+<input type="tel" id="phone" placeholder="01XXXXXXXXX">
 
 <label>password</label>
-<input type="password">
+<input type="password" id="password">
 
 <label>Training Price</label>
-<input type="number" placeholder="Price in EGP">
+<input type="number" id="price" placeholder="Price in EGP">
 
 <label>About You</label>
-<textarea placeholder="Tell us about yourself"></textarea>
+<textarea id="about" placeholder="Tell us about yourself"></textarea>
 
 <label>Upload Your Photo</label>
 <input type="file" accept="image/*">
