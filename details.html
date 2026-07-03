@@ -97,19 +97,10 @@ Back
 
 <script>
     
-   document.getElementById("loginForm").addEventListener("submit", function(e){
-    e.preventDefault();
-
-    localStorage.setItem("loggedIn","true");
-
-    const coach = localStorage.getItem("coachName");
-
-    if(coach){
-        window.location.href = "coach_details.html?name=" + encodeURIComponent(coach);
-    }else{
-        window.location.href = "SkillMasr.html";
-    }
-});
+   if (localStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "log.html";
+}
+   
 const data = {
 
 "Ahmed Hassan":{
