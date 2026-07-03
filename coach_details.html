@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coach Details</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#D6D6D6;
+    text-align:center;
+    padding:30px;
+}
+
+
+.card{
+    background:white;
+    max-width:700px;
+    margin:auto;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+img{
+    width:300px;
+    border-radius:15px;
+}
+
+ul{
+    list-style:none;
+    padding:0;
+}
+#places{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+li{
+    background:#eee;
+    margin:10px;
+    padding:10px;
+    border-radius:10px;
+}
+
+button{
+    background:#C62828;
+    color:white;
+    border:none;
+    padding:12px 20px;
+    border-radius:8px;
+    cursor:pointer;
+}
+</style>
+
+</head>
+<body>
+    <nav>
+        <a href="Home_Page.html">Home</a>
+        <a href="SkillMasr.html">Page 2</a>
+        <a href="log.html">Page 3</a>
+        <a href="trainer.html">Page 4</a>
+        <a href="coach_details.html">Page 5</a>
+    </nav>
+
+<div class="card">
+<h1 id="name"></h1>
+
+<img id="img" alt="coach image">
+
+<h3 id="sport"></h3>
+
+<p><b>Area:</b> <span id="area"></span></p>
+
+<p><b>Phone:</b> <span id="phone"></span></p>
+
+<p><b>Price:</b> <span id="price"></span></p>
+
+<p id="about"></p>
+
+<h2>Training Place</h2>
+<div id="places"></div>
+
+<h2>Certificates</h2>
+<ul id="certs"></ul>
+
+<br>
+
+<button onclick="history.back()">
+Back
+</button>
+
+</div>
+
+<script>
+
+const data = {
+
+"Ahmed Hassan":{
+img:"https://t4.ftcdn.net/jpg/02/11/51/53/360_F_211515361_bnIbyKadClzn3hJT0zCPPuPApcG7k3lC.jpg",
+name:"Ahmed Hassan",
+sport:"Football",
+governorate:"Alexandria",
+area:"El Shams Club - Alexandria",
+phone:"+20 101 234 5678",
+price:"50 EGP / Session",
+about:"Former football player with over 5 years of coaching experience. Specialized in improving fitness, ball control, passing accuracy, and match tactics for beginners and intermediate players.",
+certs:["UEFA License","Fitness Diploma"],
+trainingPlaces:["https://img.youm7.com/large/20170106115603563.jpg"]
+},
+
+"Sara Mohamed":{
+img:"https://media.istockphoto.com/id/1397734203/vector/couple-fitness-logo-vector.jpg?s=612x612&w=0&k=20&c=o-MflGLdwx7Z5R2ZUyOwggGNCsMabFxCkODsRg4iMY0=",
+name:"Sara Mohamed",
+sport:"Fitness",
+governorate:"Cairo",
+area:"Gold Gym - Cairo",
+phone:"+20 102 456 7812",
+price:"100 EGP / Session",
+about:"Certified fitness coach with more than 10 years of experience. Helps clients achieve their goals through customized workout plans, nutrition guidance, and continuous motivation.",
+certs:["NASM Certificate","Nutrition Course"],
+trainingPlaces:["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHW9ibsdRq3gWav1SSpwWbm761XQ-StBsOaw&s"]
+},
+
+"Omar Ali":{
+img:"https://www.shutterstock.com/image-vector/basketball-player-silhouette-logo-vector-260nw-2717047395.jpg",
+name:"Omar Ali",
+sport:"Basketball",
+governorate:"Alexandria",
+area:"Sports Club - Alexandria",
+phone:"+20 109 876 5432",
+price:"80 EGP / Session",
+about:"Professional basketball coach with over 7 years of experience. Focuses on shooting techniques, teamwork skills, ball handling, and athletic performance.",
+certs:["Basketball Coach License","Sports Science Diploma"],
+trainingPlaces:["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiplV15cHjK8qR4b4qedlWKJ-gbc8lJ1Mkbg&s"]
+},
+
+"Youssef Adel":{
+img:"https://static.vecteezy.com/system/resources/previews/065/434/247/non_2x/swimming-sport-logo-icon-flat-illustration-vector.jpg",
+name:"Youssef Adel",
+sport:"Swimming",
+governorate:"Alexandria",
+area:"Olympic Club - Alexandria",
+phone:"+20 100 987 6543",
+price:"120 EGP / Session",
+about:"Swimming coach with more than 15 years of experience. Specialized in teaching all age groups, improving technique, endurance, and competition preparation.",
+certs:["Swimming Coach Certificate"],
+trainingPlaces:["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeEGjEEcFM6sF7BlBYIHiPtvYlD_6oD3Sc7w&s"]
+},
+
+"Mariam Adel":{
+img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPYAbSu1Lk2gaa1_VZMByeW9G6tsT0EvE8vg&s",
+name:"Mariam Adel",
+sport:"Art",
+governorate:"Alexandria",
+area:"Creative Art Center - Alexandria",
+phone:"+20 111 222 3333",
+price:"90 EGP / Session",
+about:"Art instructor specialized in crochet and resin crafts. Helps beginners learn creative handmade skills step by step.",
+certs:["Crochet Course","Resin Art Workshop"],
+trainingPlaces:["https://www.google.com/search?q=Creative+Art+Center&sca_esv=d937b20cf1976ff6&udm=2&biw=1093&bih=513&sxsrf=ANbL-n7CWlS1zXXOmjfLld5KYqdaxd3UHw%3A1780893867251&ei=q0gmasCGD8j4kdUPjPSbsQU&ved=0ahUKEwiAiNzS6vaUAxVIfKQEHQz6JlYQ4dUDCBE&uact=5&oq=Creative+Art+Center&gs_lp=Egtnd3Mtd2l6LWltZyITQ3JlYXRpdmUgQXJ0IENlbnRlcjIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgcQABiABBgKMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEjBHVDZA1irF3ACeACQAQKYAXCgAbIHqgEDOC4yuAEDyAEA-AEB-AECmAIEoAKJAqgCCsICBhAAGAcYHsICBxAjGMkCGCfCAgQQABgewgIKECMYyQIY6gIYJ5gDEYgGAZIHAzIuMqAHwy2yBwMwLjK4B-UBwgcDMy00yAc4gAgB&sclient=gws-wiz-img#sv=CAMSVhoyKhBlLTZiYUozS29ZOVBzX2lNMg42YmFKM0tvWTlQc19pTToOX1RtYXVMRDZtbUZNR00gBCocCgZtb3NhaWMSEGUtNmJhSjNLb1k5UHNfaU0YADABGAcgzYz42g5KCBABGAEgASgB"]
+},
+
+"Fatma Ali":{
+img:"https://logomakerr.ai/blog/wp-content/uploads/2023/11/illumine-candles-logo-design.jpg",
+name:"Fatma Ali",
+sport:"Handmade",
+governorate:"Cairo",
+area:"Handmade Studio - Cairo",
+phone:"+20 112 333 4444",
+price:"80 EGP / Session",
+about:"Handmade artist specialized in candle making and decorative products with modern creative designs.",
+certs:["Candle Making Certificate"],
+trainingPlaces:["https://assets.jwwb.nl/assets/img/customer-stories/studio-handmade-heaven-post-1.webp?bust=64ee520f7e7852b46652"]
+},
+
+"Nada Ahmed":{
+img:"https://thumbs.dreamstime.com/b/piano-lessons-poster-musical-note-36625482.jpg",
+name:"Nada Ahmed",
+sport:"Music",
+governorate:"Alexandria",
+area:"Music Academy - Alexandria",
+phone:"+20 113 444 5555",
+price:"130 EGP / Session",
+about:"Piano instructor with strong experience in teaching music theory and practical piano skills.",
+certs:["Piano Teacher Diploma"],
+trainingPlaces:["https://www.google.com/search?q=Music+Academy&sca_esv=a708274f6968f4df&udm=2&biw=1093&bih=513&sxsrf=ANbL-n4UEa8XgPT-_Qo1grjMnqL9zmONgQ%3A1780894003487&ei=M0kmat-3Hfnz7M8PxdPCoAM&ved=0ahUKEwifndeT6_aUAxX5OfsDHcWpEDQQ4dUDCBE&uact=5&oq=Music+Academy&gs_lp=Egtnd3Mtd2l6LWltZyINTXVzaWMgQWNhZGVteTIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgARIhA1QmAhYmAhwAXgAkAEAmAFsoAFsqgEDMC4xuAEDyAEA-AEB-AECmAICoAKRAagCCsICChAjGMkCGOoCGCeYAw-SBwMxLjGgB-YEsgcDMC4xuAeCAcIHBTMtMS4xyAcfgAgB&sclient=gws-wiz-img#sv=CAMSVhoyKhBlLXpScGtlXzVQeGgyUU1NMg56UnBrZV81UHhoMlFNTToOOTVmNXpOMDNsb1JFNk0gBCocCgZtb3NhaWMSEGUtelJwa2VfNVB4aDJRTU0YADABGAcglt2joAlKCBABGAEgASgB"]
+},
+
+"Omar Mostafa":{
+img:"https://i.etsystatic.com/18154652/r/il/f22387/1629260272/il_fullxfull.1629260272_d6io.jpg",
+name:"Omar Mostafa",
+sport:"Music",
+governorate:"Giza",
+area:"Guitar Center - Giza",
+phone:"+20 114 555 6666",
+price:"120 EGP / Session",
+about:"Guitar instructor teaching acoustic and electric guitar with focus on beginners and intermediate players.",
+certs:["Music Theory Certificate"],
+trainingPlaces:["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyJZTErVHq_-cguLGa0A7LoI5JPcp30exY-w&s"]
+},
+
+"Mohamed Khaled":{
+img:"https://img.freepik.com/free-vector/creative-gradient-code-logo_23-2148820572.jpg",
+name:"Mohamed Khaled",
+sport:"Programming",
+governorate:"Cairo",
+area:"Tech Hub - Cairo",
+phone:"+20 115 666 7777",
+price:"150 EGP / Session",
+about:"Software engineer teaching web development including HTML, CSS, JavaScript and real projects.",
+certs:["Full Stack Certificate"],
+trainingPlaces:["https://www.cio.com/wp-content/uploads/2023/05/ihub-100833090-orig-1.jpg?quality=50&strip=all&w=1024"]
+},
+
+"Ahmed Samir":{
+img:"https://previews.123rf.com/images/captainvector/captainvector2208/captainvector220829703/189851058-problem-solving-icon.jpg",
+name:"Ahmed Samir",
+sport:"Programming",
+governorate:"Alexandria",
+area:"Coding Academy - Alexandria",
+phone:"+20 116 777 8888",
+price:"180 EGP / Session",
+about:"Python developer focused on problem solving, automation, and beginner programming training.",
+certs:["Python Certificate","Automation Course"],
+trainingPlaces:["https://media.licdn.com/dms/image/v2/C4D1BAQEr7RDuKau1iw/company-background_10000/company-background_10000/0/1583180785548/robotocodingacademy_cover?e=2147483647&v=beta&t=mTDVqfyJBuknqfJS9rm_i3vbMXxWlOrvFWsABakww-0"]
+}
+};
+const params = new URLSearchParams(window.location.search);
+
+const name = params.get("name");
+
+const coach = data[name];
+if (!coach) {
+    document.body.innerHTML = "<h2>Coach not found</h2>";
+    throw new Error("No coach found");
+}
+
+document.getElementById("name").textContent = coach.name;
+document.getElementById("sport").textContent = coach.sport;
+document.getElementById("img").src = coach.img;
+document.getElementById("area").textContent = coach.area;
+document.getElementById("phone").textContent = coach.phone;
+document.getElementById("price").textContent = coach.price;
+document.getElementById("about").textContent = coach.about;
+const ul = document.getElementById("certs");
+coach.certs.forEach(cert => {
+const li = document.createElement("li");
+li.textContent = cert;
+ul.appendChild(li);
+});
+const placesDiv = document.getElementById("places");
+
+coach.trainingPlaces.forEach(imgUrl => {
+    const img = document.createElement("img");
+    img.src = imgUrl;
+    img.style.width = "150px";
+    img.style.margin = "10px";
+    img.style.borderRadius = "10px";
+
+    placesDiv.appendChild(img);
+});
+</script>
+
+</body>
+</html>
+
+

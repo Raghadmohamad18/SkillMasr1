@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in</title>
+    <style>
+        .welcome{
+            height: 100px;
+            width: 600px;
+            background-color: rgb(171, 173, 173);
+        }
+        .form{
+            display: flex;
+            flex-direction: column;
+
+        }
+        hr{
+            width: 600px;
+        }
+        button{
+            height: 50px;
+            width: 90px;
+            background-color: rgba(146, 240, 154, 0.849);
+            border-radius: 20%;
+        }
+        a{
+            color: blue;
+            text-decoration: underline;
+        }
+        .form{
+           background:rgba(250, 247, 219, 0.863);
+           width:90%;
+           max-width:600px;
+           padding:25px;
+           border-radius:15px;
+           box-shadow:0 0 10px rgba(0,0,0,0.2);
+        }
+        input{
+            border-radius: 5px;
+        }
+         .contact-section {
+            background: rgb(87, 84, 84);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .contact-section h2 {
+            border-bottom: 3px solid #C62828;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .contact-section a {
+            color: #64B5F6;
+            text-decoration: underline;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            background: rgb(87, 84, 84);
+            color: white;
+            padding: 20px;
+            border-top: 3px solid #C62828;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="Home_Page.html">Home</a>
+        <a href="SkillMasr.html">Page 2</a>
+        <a href="log.html">Page 3</a>
+        <a href="trainer.html">Page 4</a>
+        <a href="coach_details.html">Page 5</a>
+    </nav>
+    <center>
+        <div class="welcome">
+            <h1>Log in page.</h1>
+            <h3><em>Let us remember you.</em></h3>
+        </div><hr>
+        <div class="form">
+            <form>
+                <label>Phone number</label>
+                <input type="tel"placeholder="01XXXXXXXXX" required><br><br>
+
+                <label>password</label>
+                <input type="password" required><br><br>
+
+                <button type="submit">Log in</button>
+            </form>
+        </div>
+        <div class="sign">
+            <p>You don't have an account</p>
+            <a href="sign.html"><em>Sign up</em></a>
+        </div>
+    </center>
+
+    <section id="contact" class="contact-section">
+            <h2 id="contact-title">Contact Us</h2>
+            <p>📱 <span id="phone">phone no.:+20**********</span></p>
+            <p>💬 <span id="whatsapp">whatsapp: <a href="https://wa.me/20**********">click here</a></span></p>
+            <p>📧 <span id="email">email: Skillmasr@gmail.com</span></p>
+    </section>
+
+    <footer>
+             <p id="footer-text">© 2026 SkillMasr - All Rights Reserved</p>
+    </footer>
+</body>
+</html>

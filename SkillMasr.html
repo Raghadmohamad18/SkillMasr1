@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillMasr</title>
+    
+    <style>
+        body { 
+            font-family: 'Arial', sans-serif;
+             background-color: #D6D6D6; 
+             margin: 0; padding: 0;
+            }
+           
+         .about-section{
+            text-align: center;
+            direction: rtl;
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        #about-text{
+            text-align: center;
+            direction: rtl;
+            line-height: 1.8;
+        }
+        .header-content{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+            header{
+            position: relative;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #4A4A4A, #2F2F2F);
+            border-bottom: 5px solid #C62828;
+            color: white;
+        }
+
+        #title {
+            font-size: 70px;
+            margin-bottom: 0px;
+            font-weight: bold;
+        }
+        
+        #subtitle {
+            font-size: 18px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .section-title {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #C62828;
+            display: inline-block;
+        }
+        
+        .products {
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:20px;
+        }
+
+        .product {
+            background: #4A4A4A;
+            color: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+            transition: 0.3s;
+            text-align: center;
+            height: 550px;
+            width:250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .product button + button {
+          margin-top: 10px;}
+
+        .product img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .product h3 {
+            margin: 15px 0 10px;
+            font-size: 20px;
+        }
+        
+        .product p {
+            color: #CCC;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .price {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4CAF50;
+            margin: 10px 0;
+        }
+        
+        button {
+            background: #C62828;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #A00000;
+        }
+        
+        section { 
+            margin: 40px 0 20px; 
+        }
+
+        .contact-section {
+            background: #4A4A4A;
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .contact-section h2 {
+            border-bottom: 3px solid #C62828;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .contact-section a {
+            color: #64B5F6;
+            text-decoration: none;
+        }
+ 
+        body.ltr {
+            direction: ltr;
+            text-align: left;
+        }
+
+        body.rtl {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            background: #2F2F2F;
+            color: white;
+            padding: 20px;
+            border-top: 3px solid #C62828;
+        }
+        .categories{
+            display:flex;
+            justify-content:center;
+            gap:15px;
+            flex-wrap:wrap;
+            margin:30px 0;
+        }
+        section{
+    text-align:center;
+}
+        .categories button{
+    width:auto;
+    padding:12px 25px;
+    border-radius:30px;
+    background:#4A4A4A;
+    color:white;
+    border:2px solid #C62828;
+    cursor:pointer;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.categories button:hover{
+    background:#C62828;
+}
+        .category{
+            display:none;
+        }
+
+    </style>
+</head>
+<body class="ltr">
+    <div class="language-toggle">
+        <button onclick="toggleLanguage()">العربية</button>
+    </div>
+    <nav>
+        <a href="Home_Page.html">Home</a>
+        <a href="SkillMasr.html">Page 2</a>
+        <a href="log.html">Page 3</a>
+        <a href="trainer.html">Page 4</a>
+        <a href="coach_details.html">Page 5</a>
+    </nav>
+    <header>
+        <h1 id="title">SkillMasr</h1>
+        <p id="subtitle">Turn Passion Into Skill</p>
+    </header>
+    <center>
+        <input
+        id="search"type="search" placeholder="Search for a sport or craft"
+        style="width:500px; height:45px;">
+    </center>
+        <!--sports section -->
+    <div class="categories">
+        <button id='1'onclick="showCategory('sports')">⚽ Sports</button>
+        <button id='2' onclick="showCategory('handmade')">🎨 Handmade</button>        
+        <button id='3' onclick="showCategory('music')">🎵 Music</button>
+        <button id='4' onclick="showCategory('programming')">💻 Programming</button>
+    </div>
+    
+    <section id="sports" class="category"style="display:block;">
+       <h2 class="section-title">Sports</h2>
+       <div class="products">
+            <div class="product">
+                <img id="img1" src="https://t4.ftcdn.net/jpg/02/11/51/53/360_F_211515361_bnIbyKadClzn3hJT0zCPPuPApcG7k3lC.jpg" alt="Football player">
+                <h3>Ahmed Hassan</h3>
+                <h3 id="sport1">Football</h3>
+                <p id="desc1">Former football player with over 5 years of coaching experience.
+                    Specialized in improving fitness, ball control, passing accuracy,
+                    and match tactics for beginners and intermediate players.</p>
+                <p class="price">50 EGP / Session</p>
+                <button id="btn1" onclick="order('Ahmed Hassan')">Contact the coach</button>
+                <button id="details1" onclick="goDetails('Ahmed Hassan')">View Details</button>
+            </div>
+                
+            <div class="product">
+                <img src="https://media.istockphoto.com/id/1397734203/vector/couple-fitness-logo-vector.jpg?s=612x612&w=0&k=20&c=o-MflGLdwx7Z5R2ZUyOwggGNCsMabFxCkODsRg4iMY0=" alt="fitness player">
+                <h3 >Sara Mohamed </h3>
+                <h3 id="sport2">Fitness</h3>
+                <p id="desc2">Certified fitness coach with more than 10 years of experience.
+                    Helps clients achieve their goals through customized workout plans,
+                    nutrition guidance, and continuous motivation.</p>
+                <p class="price">100 EGP / Session</p>                    
+                <button id="btn2" onclick="order('Sara Mohamed')">Contact the coach</button>
+                <button id="details2" onclick="goDetails('Sara Mohamed')">View details</button>
+            </div>
+
+            <div class="product">
+                <img src="https://www.shutterstock.com/image-vector/basketball-player-silhouette-logo-vector-260nw-2717047395.jpg" alt="basketball player">
+                <h3>Omar Ali</h3>
+                <h3 id="sport3">Basketball</h3>
+                <p id="desc3">Professional basketball coach with over 7 years of experience.
+                    Focuses on shooting techniques, teamwork skills,
+                    ball handling, and athletic performance.</p>
+                <p class="price">80 EGP / Session</p>
+                <button id="btn3" onclick="order('Omar Ali')">Contact the coach</button>
+                <button id="details3" onclick="goDetails('Omar Ali')">View Details</button>
+
+            </div>
+
+            <div class="product">
+                <img id="img4" src="https://static.vecteezy.com/system/resources/previews/065/434/247/non_2x/swimming-sport-logo-icon-flat-illustration-vector.jpg" alt="swimmer">
+                <h3>Youssef Adel</h3>
+                <h3 id="sport4">Swimming</h3>
+                <p id="desc4">Swimming coach with more than 15 years of experience.
+                    Specialized in teaching all age groups,
+                    improving technique, endurance, and competition preparation.</p>
+                <p class="price">120 EGP / Session</p>
+                <button id="btn4" onclick="order('Youssef Adel')">Contact the coach</button>
+                <button id="details4" onclick="goDetails('Youssef Adel')">View Details</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="handmade" class="category" style="display:none;">
+    <h2 class="section-title"> Handmade</h2>
+        <div class="products">
+            <div class="product">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPYAbSu1Lk2gaa1_VZMByeW9G6tsT0EvE8vg&s" alt="Handmade">
+                <h3>Mariam Adel</h3>
+                <h3 id="sport5">Crochet and Resin Art</h3>
+                <p id="desc5">Handmade crafts instructor with 8 years of experience.
+                    Teaches crochet, embroidery, resin art,
+                    and creative DIY projects for beginners.</p>
+                <p class="price">90 EGP / Session</p>
+                <button id="btn5" onclick="order('Mariam Adel')">Contact the coach</button>
+                <button id="details5" onclick="goDetails('Mariam Adel')">View Details</button>
+
+            </div>
+            <div class="product">
+                <img src="https://logomakerr.ai/blog/wp-content/uploads/2023/11/illumine-candles-logo-design.jpg" alt="Handmade">
+                <h3>Fatma Ali</h3>
+                <h3 id="sport6">Candle and Decoration Products</h3>
+                <p id="desc6">Handmade artist with 5 years of experience in candle making,
+                    and decorative products.</p>
+                <p class="price">80 EGP / Session</p>
+                <button id="btn6" onclick="order('Fatma Ali')">Contact the coach</button>
+                <button id="details6" onclick="goDetails('Fatma Ali')">View Details</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="music" class="category" style="display:none;">
+        <h2 class="section-title"> music</h2>
+        <div class="products">
+            <div class="product">
+                <img src="https://thumbs.dreamstime.com/b/piano-lessons-poster-musical-note-36625482.jpg" alt="Music">
+                <h3>Nada Ahmed</h3>
+                <h3 id="sport7">Piano Lessons</h3>
+                <p id="desc7">Music instructor with 9 years of experience.
+                    Provides piano lessons and music theory training
+                    for beginners and intermediate students.</p>
+                <p class="price">130 EGP / Session</p>
+                <button id="btn7" onclick="order('Nada Ahmed')">Contact the coach</button>
+                <button id="details7" onclick="goDetails('Nada Ahmed')">View Details</button>
+            </div>
+            <div class="product">
+                <img src="https://i.etsystatic.com/18154652/r/il/f22387/1629260272/il_fullxfull.1629260272_d6io.jpg" alt="Music">
+                <h3>Omar Mostafa</h3>
+                <h3 id="sport8">Guitar</h3>
+                <p id="desc8">Guitar instructor with 7 years of experience teaching
+                    acoustic and electric guitar.</p>
+                <p class="price">120 EGP / Session</p>
+                <button id="btn8" onclick="order('Omar Mostafa')">Contact the coach</button>
+                <button id="details8" onclick="goDetails('Omar Mostafa')">View Details</button>
+            </div>
+        </div>
+    </section>
+    <section id="programming" class="category" style="display:none;">
+        <h2 class="section-title"> programming</h2>
+        <div class="products">
+            <div class="product">
+                <img src="https://img.freepik.com/free-vector/creative-gradient-code-logo_23-2148820572.jpg?semt=ais_hybrid&w=740&q=80" alt="Programming">
+                <h3>Mohamed Khaled</h3>
+                <h3 id="sport9">Web Development</h3>
+                <p id="desc9">Software engineer with 6 years of experience in web development.
+                    Teaches HTML, CSS, JavaScript and beginner-friendly projects
+                    with practical hands-on learning.</p>
+                <p class="price">150 EGP / Session</p>
+                <button id="btn9" onclick="order('Mohamed Khaled')">Contact the coach</button>
+                <button id="details9" onclick="goDetails('Mohamed Khaled')">View Details</button>
+            </div>
+            <div class="product">
+                <img src="https://previews.123rf.com/images/captainvector/captainvector2208/captainvector220829703/189851058-problem-solving-icon.jpg" alt="Programming">
+                <h3>Ahmed Samir</h3>
+                <h3 id="sport10">Problem Solving and Automation</h3>
+                <p id="desc10">Python developer teaching programming fundamentals,
+                    problem solving, and automation.</p>
+                <p class="price">180 EGP / Session</p>
+                <button id="btn10" onclick="order('Ahmed Samir')">Contact the coach</button>
+                <button id="details10" onclick="goDetails('Ahmed Samir')">View Details</button>
+            </div>
+        </div>
+    </section>
+
+    <!--about us section -->
+    <section class="about-section">
+        <h2 id="about-title" class="section-title">About Us</h2>
+
+        <p id="about-text">
+        At SkillMasr, we believe that talent grows through dedication and proper training.
+        Our platform connects athletes with experienced coaches to help them develop their
+        skills, improve their performance, and achieve their sporting goals.
+        </p>
+    </section>
+    
+        
+    <!--contact us section -->
+    <section id="contact" class="contact-section">
+        <h2 id="contact-title"> Contact Us</h2>
+        <p id="phone">📱Phone No.: +201100351797</p>
+        <p id="whatsapp">
+        💬WhatsApp:
+        <a href="https://wa.me/201100351797">Click Here</a></p>
+        <p id="email">📧Email: skillmasr@gmail.com</p>
+    </section>
+    
+    <footer>
+        <p id="footer-text">© 2026 SkillMasr - All Rights Reserved</p>
+    </footer>
+    
+    <script>
+        let isEnglish = true;
+        let editAccess = false;
+         
+function toggleLanguage() {
+            const btn = document.querySelector('.language-toggle button');
+            // Switch back to English
+            if (!isEnglish) {
+                document.getElementById("title").textContent = "SkillMasr";
+                document.getElementById("subtitle").textContent = "Turn Passion Into Skill";
+
+                document.getElementById("1").textContent = "⚽ Sports";
+                document.getElementById("2").textContent = "🎨 Handmade";
+                document.getElementById("3").textContent = "🎵 Music";
+                document.getElementById("4").textContent = "💻 Programming";
+
+                document.getElementById("sport1").textContent = "Football";
+                document.getElementById("desc1").textContent =
+                "Former football player with over 5 years of coaching experience. Specialized in improving fitness, ball control, passing accuracy, and match tactics for beginners and intermediate players.";
+                document.getElementById("btn1").textContent = "Contact the coach";
+                document.getElementById("details1").textContent = "Go Details";
+
+                document.getElementById("sport2").textContent = "Fitness";
+                document.getElementById("desc2").textContent =
+                "Certified fitness coach with more than 10 years of experience. Helps clients achieve their goals through customized workout plans, nutrition guidance, and continuous motivation.";
+                document.getElementById("btn2").textContent = "Contact the coach";
+                document.getElementById("details2").textContent = "Go Details";
+
+                document.getElementById("sport3").textContent = "Basketball";
+                document.getElementById("desc3").textContent =
+                "Professional basketball coach with over 7 years of experience. Focuses on shooting techniques, teamwork skills, ball handling, and athletic performance.";
+                document.getElementById("btn3").textContent = "Contact the coach";
+                document.getElementById("details3").textContent = "Go Details";
+
+                document.getElementById("sport4").textContent = "Swimming";
+                document.getElementById("desc4").textContent =
+                "Swimming coach with more than 15 years of experience. Specialized in teaching all age groups, improving technique, endurance, and competition preparation.";
+                document.getElementById("btn4").textContent = "Contact the coach";
+                document.getElementById("details4").textContent = "Go Details";
+
+                document.getElementById("sport5").textContent = "Crochet and Resin Art";
+                document.getElementById("desc5").textContent =
+                "Handmade crafts instructor with 8 years of experience. Teaches crochet, embroidery, resin art, and creative DIY projects for beginners.";
+                document.getElementById("btn5").textContent = "Contact the coach";
+                document.getElementById("details5").textContent = "Go Details";
+
+                document.getElementById("sport6").textContent = "Candle and Decoration Products";
+                document.getElementById("desc6").textContent =
+                "Handmade artist with 5 years of experience in candle making and decorative products.";
+                document.getElementById("btn6").textContent = "Contact the coach";
+                document.getElementById("details6").textContent = "Go Details";
+
+                document.getElementById("sport7").textContent = "Piano Lessons";
+                document.getElementById("desc7").textContent =
+                "Music instructor with 9 years of experience. Provides piano lessons and music theory training for beginners and intermediate students.";
+                document.getElementById("btn7").textContent = "Contact the coach";
+                document.getElementById("details7").textContent = "Go Details";
+
+                document.getElementById("sport8").textContent = "Guitar";
+                document.getElementById("desc8").textContent =
+                "Guitar instructor with 7 years of experience teaching acoustic and electric guitar.";
+                document.getElementById("btn8").textContent = "Contact the coach";
+                document.getElementById("details8").textContent = "Go Details";
+
+                document.getElementById("sport9").textContent = "Web Development";
+                document.getElementById("desc9").textContent =
+                "Software engineer with 6 years of experience in web development. Teaches HTML, CSS, JavaScript and beginner-friendly projects with practical hands-on learning.";
+                document.getElementById("btn9").textContent = "Contact the coach";
+                document.getElementById("details9").textContent = "Go Details";
+
+                document.getElementById("sport10").textContent = "Problem Solving and Automation";
+                document.getElementById("desc10").textContent =
+                "Python developer teaching programming fundamentals, problem solving, and automation.";
+                document.getElementById("btn10").textContent = "Contact the coach";
+                document.getElementById("details10").textContent = "Go Details";
+
+                document.getElementById('about-title').textContent = 'About Us';
+                document.getElementById('about-text').textContent =  'At SkillMasr, we believe that talent grows through dedication and proper training. Our platform connects athletes with experienced coaches to help them develop their skills, improve their performance, and achieve their sporting goals.';
+                document.getElementById('contact-title').textContent = 'Contact Us';
+                document.getElementById('phone').textContent = 'Phone: +2011100351797';
+                document.getElementById('whatsapp').innerHTML = 'WhatsApp: <a href="https://wa.me/01100351797">Click here</a>';
+                document.getElementById('email').textContent = 'Email:skillmasr@gmail.com';
+                btn.textContent = 'Switch to Arabic';
+                document.documentElement.lang = 'en';
+                document.documentElement.dir = 'ltr';
+                isEnglish = true;
+            } else {
+                // Switch to Arabic
+                document.getElementById("title").textContent = "SkillMasr";
+                document.getElementById("subtitle").textContent = "حوّل شغفك إلى مهارة";
+                document.getElementById("sport1").textContent = "كرة القدم";
+                document.getElementById("desc1").textContent =
+                "لاعب كرة قدم سابق يمتلك أكثر من 5 سنوات من الخبرة في التدريب. متخصص في تحسين اللياقة البدنية، والتحكم بالكرة، ودقة التمرير، وتكتيكات المباريات للمبتدئين واللاعبين متوسطي المستوى.";
+                document.getElementById("btn1").textContent = "تواصل مع المدرب";
+                document.getElementById("details1").textContent = "التفاصيل";
+
+                document.getElementById("sport2").textContent = "اللياقة البدنية";
+                document.getElementById("desc2").textContent =
+                "مدربة لياقة بدنية معتمدة تمتلك أكثر من 10 سنوات من الخبرة. تساعد العملاء على تحقيق أهدافهم من خلال خطط تدريب مخصصة، وإرشادات غذائية، وتحفيز مستمر.";
+                document.getElementById("btn2").textContent = "تواصل مع المدرب";
+                document.getElementById("details2").textContent = "التفاصيل";
+
+                document.getElementById("sport3").textContent = "كرة السلة";
+                document.getElementById("desc3").textContent =
+                "مدرب كرة سلة محترف يمتلك أكثر من 7 سنوات من الخبرة. يركز على تقنيات التصويب، ومهارات العمل الجماعي، والتحكم بالكرة، وتحسين الأداء الرياضي.";
+                document.getElementById("btn3").textContent = "تواصل مع المدرب";
+                document.getElementById("details3").textContent = "التفاصيل";
+
+                document.getElementById("sport4").textContent = "السباحة";
+                document.getElementById("desc4").textContent =
+                "مدرب سباحة يمتلك أكثر من 15 سنة من الخبرة. متخصص في تدريب جميع الفئات العمرية، وتحسين التقنية، والقدرة على التحمل، والاستعداد للمسابقات.";
+                document.getElementById("btn4").textContent = "تواصل مع المدرب";
+                document.getElementById("details4").textContent = "التفاصيل";
+
+                document.getElementById("sport5").textContent = "الكروشيه وفن الريزن";
+                document.getElementById("desc5").textContent =
+                "مدربة للأشغال اليدوية تمتلك 8 سنوات من الخبرة. تقوم بتعليم الكروشيه، والتطريز، وفن الريزن، والمشاريع اليدوية الإبداعية للمبتدئين.";
+                document.getElementById("btn5").textContent = "تواصل مع المدرب";
+                document.getElementById("details5").textContent = "التفاصيل";
+
+                document.getElementById("sport6").textContent = "صناعة الشموع والمنتجات الزخرفية";
+                document.getElementById("desc6").textContent =
+                "فنانة أشغال يدوية تمتلك 5 سنوات من الخبرة في صناعة الشموع، وصناعة المنتجات الزخرفية.";
+                document.getElementById("btn6").textContent = "تواصل مع المدرب";
+                document.getElementById("details6").textContent = "التفاصيل";
+
+                document.getElementById("sport7").textContent = "دروس البيانو";
+                document.getElementById("desc7").textContent =
+                "مدربة موسيقى تمتلك 9 سنوات من الخبرة. تقدم دروسًا في العزف على البيانو وتدريبًا على النظريات الموسيقية للمبتدئين والطلاب متوسطي المستوى.";
+                document.getElementById("btn7").textContent = "تواصل مع المدرب";
+                document.getElementById("details7").textContent = "التفاصيل";
+
+                document.getElementById("sport8").textContent = "تعليم الجيتار";
+                document.getElementById("desc8").textContent =
+                "مدرب جيتار يمتلك 7 سنوات من الخبرة في تدريس العزف على الجيتار الأكوستيك والكهربائي.";
+                document.getElementById("btn8").textContent = "تواصل مع المدرب";
+                document.getElementById("details8").textContent = "التفاصيل";
+
+                document.getElementById("sport9").textContent = "تطوير الويب";
+                document.getElementById("desc9").textContent =
+                "مهندس برمجيات يمتلك 6 سنوات من الخبرة في تطوير الويب. يقوم بتدريس HTML وCSS وJavaScript ومشاريع مناسبة للمبتدئين من خلال التعلم العملي والتطبيقي.";
+                document.getElementById("btn9").textContent = "تواصل مع المدرب";
+                document.getElementById("details9").textContent = "التفاصيل";
+
+                document.getElementById("sport10").textContent = "أساسيات البرمجة وحل المشكلات";
+                document.getElementById("desc10").textContent =
+                "مطور بايثون يقوم بتدريس أساسيات البرمجة، وحل المشكلات، والأتمتة.";
+                document.getElementById("btn10").textContent = "تواصل مع المدرب";
+                document.getElementById("details10").textContent = "التفاصيل";
+
+                document.getElementById('about-title').textContent = 'من نحن';
+                document.getElementById('about-text').textContent = 'في SkillMasr نؤمن بأن الموهبة تنمو بالالتزام والتدريب الصحيح. تربط منصتنا الرياضيين بمدربين ذوي خبرة لمساعدتهم على تطوير مهاراتهم، وتحسين أدائهم، وتحقيق أهدافهم الرياضية.'
+                document.getElementById('contact-title').textContent = 'اتصل بنا';
+                document.getElementById('phone').textContent = 'هاتف: +201100351797';
+                document.getElementById('whatsapp').innerHTML = 'واتساب: <a href="https://wa.me/201100351797">اضغط هنا</a>';
+                document.getElementById('email').textContent = 'إيميل: skillmasr@gmail.com';
+                btn.textContent = 'Switch to English';
+                document.documentElement.lang = 'ar';
+                document.documentElement.dir = 'rtl';
+                isEnglish = false;
+            }
+        }
+           
+        
+        function order(product) {
+    const message = isEnglish
+        ? `Hello, I want to book a session with ${product}`
+        : `مرحباً، أريد حجز حصة مع ${product}`;
+
+    window.open(
+        `https://wa.me/201100351797?text=${encodeURIComponent(message)}`,
+        '_blank'
+    );
+}
+function showCategory(categoryId){
+
+    const sections =
+    document.querySelectorAll('.category');
+
+    sections.forEach(section=>{
+        section.style.display='none';
+    });
+
+    document.getElementById(categoryId).style.display='block';
+}
+function goDetails(name){
+    window.location.href =
+    "details.html?name=" + encodeURIComponent(name);
+}
+    </script>
+</body>
+</html>
