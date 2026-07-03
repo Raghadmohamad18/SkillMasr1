@@ -109,13 +109,19 @@
              <p id="footer-text">© 2026 SkillMasr - All Rights Reserved</p>
     </footer>
     <script>
-document.getElementById("loginForm").addEventListener("submit", function(e){
-    e.preventDefault();
-
-    localStorage.setItem("loggedIn", "true");
-
-    window.location.href = "coach_details.html";
-});
-</script>
+            document.getElementById("loginForm").addEventListener("submit", function(e){
+                e.preventDefault();
+            
+                localStorage.setItem("loggedIn", "true");
+            
+                const coach = localStorage.getItem("coachName");
+            
+                if(coach){
+                    window.location.href = "details.html?name=" + encodeURIComponent(coach);
+                }else{
+                    window.location.href = "SkillMasr.html";
+                }
+            });
+    </script>
 </body>
 </html>
