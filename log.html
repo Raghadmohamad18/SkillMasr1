@@ -82,7 +82,7 @@
             <h3><em>Let us remember you.</em></h3>
         </div><hr>
         <div class="form">
-            <form>
+            <form id="loginForm">
                 <label>Phone number</label>
                 <input type="tel"placeholder="01XXXXXXXXX" required><br><br>
 
@@ -108,5 +108,14 @@
     <footer>
              <p id="footer-text">© 2026 SkillMasr - All Rights Reserved</p>
     </footer>
+    <script>
+document.getElementById("loginForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    localStorage.setItem("loggedIn", "true");
+
+    window.location.href = "coach_details.html";
+});
+</script>
 </body>
 </html>
