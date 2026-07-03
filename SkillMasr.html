@@ -584,8 +584,15 @@ function showCategory(categoryId){
     document.getElementById(categoryId).style.display='block';
 }
 function goDetails(name){
+
+    if(localStorage.getItem("loggedIn") !== "true"){
+        localStorage.setItem("coachName", name);
+        window.location.href = "log.html";
+        return;
+    }
+
     window.location.href =
-    "details.html?name=" + encodeURIComponent(name);
+    "coach_details.html?name=" + encodeURIComponent(name);
 }
     </script>
 </body>
