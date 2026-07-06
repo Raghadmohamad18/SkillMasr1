@@ -1,8 +1,11 @@
-import { db, auth } from "./firebase.js";
+import { db } from "./firebase.js";
+import {
+  collection,
+  addDoc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const form = document.getElementById("coachForm");
-
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const fullName = document.getElementById("fullName").value;
@@ -24,4 +27,21 @@ form.addEventListener("submit", function (e) {
     console.log(password);
     console.log(price);
     console.log(about);
+    try {
+    await addDoc(collection(db, "coaches"), {
+        fullName,
+        email,
+        sport,
+        governorate,
+        area,
+        phone,
+        price,
+        about
+    });
+
+    alert("تم حفظ البيانات بنجاح ✅");
+
+} catch (error) {
+    alert(error.message);
+}
 });
