@@ -40,6 +40,7 @@ form.addEventListener("submit", async function (e) {
     });
 
     alert("تم حفظ البيانات بنجاح ✅");
+window.location.href = "index.html";
 
 } catch (error) {
     alert(error.message);
