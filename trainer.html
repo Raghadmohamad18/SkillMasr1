@@ -187,7 +187,20 @@ Register
              <p id="footer-text">© 2026 SkillMasr - All Rights Reserved</p>
     </footer>
     <script type="module" src="firebase.js"></script>
-    <script type="module" src="trainer.js"></script>
+    <script type="module">
+import { db, auth } from "./firebase.js";
+
+import {
+  collection,
+  addDoc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+import {
+  signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+    </script>
+    
     <script>
 function toggleOtherCategory() {
 
