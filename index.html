@@ -104,39 +104,5 @@
              <p id="footer-text">© 2026 SkillMasr - All Rights Reserved</p>
     </footer>
    <script type="module" src="displayCoaches.js"></script>
-
-<script>
-window.addEventListener("load", function () {
-
-    const search = document.getElementById("search");
-
-    console.log("Search Loaded");
-    console.log(search);
-
-    search.addEventListener("input", function () {
-
-        const value = this.value.toLowerCase();
-
-        const cards = document.querySelectorAll(".coach-card");
-
-        cards.forEach(card => {
-
-            const text = card.innerText.toLowerCase();
-
-            if (text.includes(value)) {
-                card.style.display = "flex";
-            } else {
-                card.style.display = "none";
-            }
-
-        });
-
-    });
-
-});
-</script>
-
-</body>
-</html>
 </body>
 </html>
