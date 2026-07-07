@@ -15,11 +15,11 @@ form.addEventListener("submit", async function (e) {
 
     const fullName = document.getElementById("fullName").value;
     const email = document.getElementById("email").value;
-    let category = document.getElementById("category").value;
-    if (category === "Other") {
-      category = otherCategory;
-  }
-    const otherCategory = document.getElementById("otherCategory").value;
+  let category = document.getElementById("category").value;
+const otherCategory = document.getElementById("otherCategory").value;
+if(category=="Other"){
+    category=otherCategory;
+}
     const sport = document.getElementById("sport").value;
     const governorate = document.getElementById("governorate").value;
     const area = document.getElementById("area").value;
