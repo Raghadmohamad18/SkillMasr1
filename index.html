@@ -108,19 +108,27 @@
 
 search.addEventListener("input", function () {
 
-    const value = this.value.toLowerCase();
+    const search = document.getElementById("search");
 
-    const cards = document.querySelectorAll(".coach-card");
+        search.addEventListener("input", function () {
+        
+            console.log("search works");
+        
+            const value = this.value.toLowerCase();
+        
+            document.querySelectorAll(".coach-card").forEach(card => {
+        
+                const text = card.innerText.toLowerCase();
+        
+                if (text.includes(value)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+        
+            });
 
-    cards.forEach(card => {
-
-        const text = card.innerText.toLowerCase();
-
-        if (text.includes(value)) {
-            card.style.display = "flex";
-        } else {
-            card.style.display = "none";
-        }
+});
 
     });
 
