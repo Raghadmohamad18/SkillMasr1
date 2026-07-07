@@ -52,7 +52,7 @@ snapshot.forEach((doc) => {
 
         </div>
         container.innerHTML += `
-<div class="product">
+<div class="product coach-card">
 
     <h3>${coach.fullName}</h3>
     <h3>${coach.sport}</h3>
