@@ -33,40 +33,25 @@ snapshot.forEach((doc) => {
         return;
     }
 
-    container.innerHTML += `
-        <div class="product">
+        container.innerHTML+=`
 
-            <h3>${coach.fullName}</h3>
-
-            <h3>${coach.sport}</h3>
-
-            <p>${coach.about}</p>
-
-            <p class="price">
-                ${coach.price} EGP / Session
-            </p>
-
-            <button onclick="order('${coach.fullName}')">
-                Contact Coach
-            </button>
-
-        </div>
-        container.innerHTML += `
-<div class="product coach-card">
-
+    <div class="product coach-card">
+    
     <h3>${coach.fullName}</h3>
+    
     <h3>${coach.sport}</h3>
-
+    
     <p>${coach.about}</p>
-
+    
     <p class="price">${coach.price} EGP / Session</p>
-
-    <button onclick="order('${coach.fullName}')">Contact Coach</button>
-
-    <button onclick="window.location.href='details.html?id=${doc.id}'">
-        View Details
+    
+    <button onclick="order('${coach.fullName}')">
+    Contact Coach
     </button>
-
+    
+    <button onclick="window.location.href='details.html?id=${doc.id}'">
+    View Details
+    </button>
 </div>
 `;
     `;
