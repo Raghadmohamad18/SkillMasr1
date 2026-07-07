@@ -7,6 +7,8 @@ import {
 
 const snapshot = await getDocs(collection(db, "coaches"));
 
-snapshot.forEach((doc) => {
+console.log("عدد المدربين:", snapshot.size);
+
+snapshot.docs.forEach((doc) => {
     console.log(doc.data());
 });
