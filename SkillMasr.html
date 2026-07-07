@@ -607,6 +607,26 @@ function goDetails(name){
     window.location.href =
     "details.html?name=" + encodeURIComponent(name);
 }
+        const search = document.getElementById("search");
+
+search.addEventListener("input", function () {
+
+    const value = this.value.toLowerCase();
+
+    document.querySelectorAll(".coach-card").forEach(card => {
+
+        const text = card.innerText.toLowerCase();
+
+        if (text.includes(value)) {
+            card.style.display = "flex";
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+});
     </script>
+    
 </body>
 </html>
