@@ -53,6 +53,5 @@ snapshot.forEach((doc) => {
     View Details
     </button>
 </div>
-`;
     `;
 });
