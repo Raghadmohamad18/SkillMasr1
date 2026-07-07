@@ -2,6 +2,10 @@ import { db } from "./firebase.js";
 import {
   collection,
   addDoc
+  import {
+signInWithEmailAndPassword
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const form = document.getElementById("coachForm");
@@ -33,6 +37,25 @@ form.addEventListener("submit", async function (e) {
     console.log(price);
     console.log(about);
     try {
+      if(fullName==""){
+          alert("Enter name");
+          return;
+          }
+          
+          if(password.length<6){
+          alert("Password must be at least 6 characters");
+          return;
+          }
+          
+          if(phone.length!=11){
+          alert("Phone must be 11 digits");
+          return;
+          }
+          
+          if(price<=0){
+          alert("Invalid price");
+          return;
+          }
     await addDoc(collection(db, "coaches"), {
         fullName,
         email,
@@ -51,4 +74,13 @@ window.location.href = "index.html";
 } catch (error) {
     alert(error.message);
 }
+  await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+localStorage.setItem("loggedIn","true");
+
+window.location="index.html";
 });
