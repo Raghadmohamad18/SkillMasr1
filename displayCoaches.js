@@ -7,5 +7,6 @@ import {
 
 const snapshot = await getDocs(collection(db, "coaches"));
 
-console.log(snapshot);
-console.log(snapshot.docs);
+snapshot.forEach((doc) => {
+    console.log(doc.data());
+});
