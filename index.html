@@ -103,6 +103,23 @@
     <footer>
              <p id="footer-text">© 2026 SkillMasr - All Rights Reserved</p>
     </footer>
-    <script type="module" src="displayCoaches.js"></script>
+    <script type="module" src="displayCoaches.js">
+        const search = document.getElementById("search");
+
+search.addEventListener("input", function(){
+
+const value = this.value.toLowerCase();
+
+document.querySelectorAll(".coach-card").forEach(card=>{
+
+const text = card.innerText.toLowerCase();
+
+card.style.display =
+text.includes(value) ? "flex":"none";
+
+});
+
+});
+    </script>
 </body>
 </html>
