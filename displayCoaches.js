@@ -1,3 +1,4 @@
+alert("displayCoaches works");
 import { db } from "./firebase.js";
 
 import {
