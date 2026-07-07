@@ -96,7 +96,7 @@ Back
 
 </div>
 
-<script>
+<script type="module">
     
    if (localStorage.getItem("loggedIn") !== "true") {
     window.location.href = "log.html";
@@ -234,17 +234,49 @@ certs:["Python Certificate","Automation Course"],
 trainingPlaces:["https://media.licdn.com/dms/image/v2/C4D1BAQEr7RDuKau1iw/company-background_10000/company-background_10000/0/1583180785548/robotocodingacademy_cover?e=2147483647&v=beta&t=mTDVqfyJBuknqfJS9rm_i3vbMXxWlOrvFWsABakww-0"]
 }
 };
+    import { db } from "./firebase.js";
+
+import {
+doc,
+getDoc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 const params = new URLSearchParams(window.location.search);
 
-const name = params.get("name");
+let coach;
 
-const coach = data[name];
-if (!coach) {
-    document.body.innerHTML = "<h2>Coach not found</h2>";
-    throw new Error("No coach found");
+const id = params.get("id");
+
+if (id) {
+
+    const coachRef = doc(db, "coaches", id);
+
+    const coachSnap = await getDoc(coachRef);
+
+    if (coachSnap.exists()) {
+
+        coach = coachSnap.data();
+
+        coach.img = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+        coach.certs = [];
+        coach.trainingPlaces = [];
+
+    }
+
+} else {
+
+    const name = params.get("name");
+
+    coach = data[name];
+
 }
 
-document.getElementById("name").textContent = coach.name;
+if (!coach) {
+
+    document.body.innerHTML = "<h2>Coach not found</h2>";
+
+    throw new Error("No coach found");
+
+}
 document.getElementById("sport").textContent = coach.sport;
 document.getElementById("img").src = coach.img;
 document.getElementById("area").textContent = coach.area;
