@@ -177,9 +177,9 @@ Register
 </center>
     <section id="contact" class="contact-section">
             <h2 id="contact-title">Contact Us</h2>
-            <p>📱 <span id="phone">phone no.:+20**********</span></p>
-            <p>💬 <span id="whatsapp">whatsapp: <a href="https://wa.me/20**********">click here</a></span></p>
-            <p>📧 <span id="email">email: Skillmasr@gmail.com</span></p>
+            <p>📱 <span id="contactPhone">phone no.:+201100351797</span></p>
+            <p>💬 <span id="whatsapp">whatsapp: <a href="https://wa.me/201100351797">click here</a></span></p>
+            <p>📧 <span id="contactEmail">email: Skillmasr@gmail.com</span></p>
     </section>
 
     <footer>
@@ -243,21 +243,23 @@ form.addEventListener("submit", async function (e) {
             return;
         }
 
-       await addDoc(collection(db, "coaches"), {
-            fullName,
-            email,
-            category,
-            governorate,
-            area,
-            phone,
-            price,
-            about
-        });
-        await signInWithEmailAndPassword(
-            auth,
-            email,
-            password
-        );
+       const userCredential = await createUserWithEmailAndPassword(
+    auth,
+    email,
+    password
+);
+
+await addDoc(collection(db, "coaches"), {
+    uid: userCredential.user.uid,
+    fullName,
+    email,
+    category,
+    governorate,
+    area,
+    phone,
+    price,
+    about,
+});
 
         localStorage.setItem("loggedIn", "true");
 
