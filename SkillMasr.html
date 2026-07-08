@@ -11,14 +11,12 @@
              background-color: #D6D6D6; 
              margin: 0; padding: 0;
             }
-           
          .about-section{
             text-align: center;
             direction: rtl;
             max-width: 800px;
             margin: 40px auto;
         }
-
         #about-text{
             text-align: center;
             direction: rtl;
@@ -141,35 +139,15 @@
             border-radius: 15px;
             margin: 30px 0;
         }
-        
         .contact-section h2 {
             border-bottom: 3px solid #C62828;
             display: inline-block;
             padding-bottom: 10px;
         }
-        
         .contact-section a {
             color: #64B5F6;
             text-decoration: none;
         }
- 
-        body.ltr {
-            direction: ltr;
-            text-align: left;
-        }
-
-        body.rtl {
-            direction: rtl;
-            text-align: right;
-        }
-        
-        .language-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-        
         footer {
             margin-top: 40px;
             text-align: center;
@@ -209,10 +187,7 @@
 
     </style>
 </head>
-<body class="ltr">
-    <div class="language-toggle">
-        <button onclick="toggleLanguage()">العربية</button>
-    </div>
+<body>
     <header>
         <h1 id="title">SkillMasr</h1>
         <p id="subtitle">Turn Passion Into Skill</p>
@@ -396,173 +371,10 @@
     </footer>
     
     <script>
-        let isEnglish = true;
         let editAccess = false;
-         
-function toggleLanguage() {
-            const btn = document.querySelector('.language-toggle button');
-            // Switch back to English
-            if (!isEnglish) {
-                document.getElementById("title").textContent = "SkillMasr";
-                document.getElementById("subtitle").textContent = "Turn Passion Into Skill";
-
-                document.getElementById("1").textContent = "⚽ Sports";
-                document.getElementById("2").textContent = "🎨 Handmade";
-                document.getElementById("3").textContent = "🎵 Music";
-                document.getElementById("4").textContent = "💻 Programming";
-
-                document.getElementById("sport1").textContent = "Football";
-                document.getElementById("desc1").textContent =
-                "Former football player with over 5 years of coaching experience. Specialized in improving fitness, ball control, passing accuracy, and match tactics for beginners and intermediate players.";
-                document.getElementById("btn1").textContent = "Contact the coach";
-                document.getElementById("details1").textContent = "Go Details";
-
-                document.getElementById("sport2").textContent = "Fitness";
-                document.getElementById("desc2").textContent =
-                "Certified fitness coach with more than 10 years of experience. Helps clients achieve their goals through customized workout plans, nutrition guidance, and continuous motivation.";
-                document.getElementById("btn2").textContent = "Contact the coach";
-                document.getElementById("details2").textContent = "Go Details";
-
-                document.getElementById("sport3").textContent = "Basketball";
-                document.getElementById("desc3").textContent =
-                "Professional basketball coach with over 7 years of experience. Focuses on shooting techniques, teamwork skills, ball handling, and athletic performance.";
-                document.getElementById("btn3").textContent = "Contact the coach";
-                document.getElementById("details3").textContent = "Go Details";
-
-                document.getElementById("sport4").textContent = "Swimming";
-                document.getElementById("desc4").textContent =
-                "Swimming coach with more than 15 years of experience. Specialized in teaching all age groups, improving technique, endurance, and competition preparation.";
-                document.getElementById("btn4").textContent = "Contact the coach";
-                document.getElementById("details4").textContent = "Go Details";
-
-                document.getElementById("sport5").textContent = "Crochet and Resin Art";
-                document.getElementById("desc5").textContent =
-                "Handmade crafts instructor with 8 years of experience. Teaches crochet, embroidery, resin art, and creative DIY projects for beginners.";
-                document.getElementById("btn5").textContent = "Contact the coach";
-                document.getElementById("details5").textContent = "Go Details";
-
-                document.getElementById("sport6").textContent = "Candle and Decoration Products";
-                document.getElementById("desc6").textContent =
-                "Handmade artist with 5 years of experience in candle making and decorative products.";
-                document.getElementById("btn6").textContent = "Contact the coach";
-                document.getElementById("details6").textContent = "Go Details";
-
-                document.getElementById("sport7").textContent = "Piano Lessons";
-                document.getElementById("desc7").textContent =
-                "Music instructor with 9 years of experience. Provides piano lessons and music theory training for beginners and intermediate students.";
-                document.getElementById("btn7").textContent = "Contact the coach";
-                document.getElementById("details7").textContent = "Go Details";
-
-                document.getElementById("sport8").textContent = "Guitar";
-                document.getElementById("desc8").textContent =
-                "Guitar instructor with 7 years of experience teaching acoustic and electric guitar.";
-                document.getElementById("btn8").textContent = "Contact the coach";
-                document.getElementById("details8").textContent = "Go Details";
-
-                document.getElementById("sport9").textContent = "Web Development";
-                document.getElementById("desc9").textContent =
-                "Software engineer with 6 years of experience in web development. Teaches HTML, CSS, JavaScript and beginner-friendly projects with practical hands-on learning.";
-                document.getElementById("btn9").textContent = "Contact the coach";
-                document.getElementById("details9").textContent = "Go Details";
-
-                document.getElementById("sport10").textContent = "Problem Solving and Automation";
-                document.getElementById("desc10").textContent =
-                "Python developer teaching programming fundamentals, problem solving, and automation.";
-                document.getElementById("btn10").textContent = "Contact the coach";
-                document.getElementById("details10").textContent = "Go Details";
-
-                document.getElementById('about-title').textContent = 'About Us';
-                document.getElementById('about-text').textContent =  'At SkillMasr, we believe that talent grows through dedication and proper training. Our platform connects athletes with experienced coaches to help them develop their skills, improve their performance, and achieve their sporting goals.';
-                document.getElementById('contact-title').textContent = 'Contact Us';
-                document.getElementById('phone').textContent = 'Phone: +2011100351797';
-                document.getElementById('whatsapp').innerHTML = 'WhatsApp: <a href="https://wa.me/01100351797">Click here</a>';
-                document.getElementById('email').textContent = 'Email:skillmasr@gmail.com';
-                btn.textContent = 'Switch to Arabic';
-                document.documentElement.lang = 'en';
-                document.documentElement.dir = 'ltr';
-                isEnglish = true;
-            } else {
-                // Switch to Arabic
-                document.getElementById("title").textContent = "SkillMasr";
-                document.getElementById("subtitle").textContent = "حوّل شغفك إلى مهارة";
-                document.getElementById("sport1").textContent = "كرة القدم";
-                document.getElementById("desc1").textContent =
-                "لاعب كرة قدم سابق يمتلك أكثر من 5 سنوات من الخبرة في التدريب. متخصص في تحسين اللياقة البدنية، والتحكم بالكرة، ودقة التمرير، وتكتيكات المباريات للمبتدئين واللاعبين متوسطي المستوى.";
-                document.getElementById("btn1").textContent = "تواصل مع المدرب";
-                document.getElementById("details1").textContent = "التفاصيل";
-
-                document.getElementById("sport2").textContent = "اللياقة البدنية";
-                document.getElementById("desc2").textContent =
-                "مدربة لياقة بدنية معتمدة تمتلك أكثر من 10 سنوات من الخبرة. تساعد العملاء على تحقيق أهدافهم من خلال خطط تدريب مخصصة، وإرشادات غذائية، وتحفيز مستمر.";
-                document.getElementById("btn2").textContent = "تواصل مع المدرب";
-                document.getElementById("details2").textContent = "التفاصيل";
-
-                document.getElementById("sport3").textContent = "كرة السلة";
-                document.getElementById("desc3").textContent =
-                "مدرب كرة سلة محترف يمتلك أكثر من 7 سنوات من الخبرة. يركز على تقنيات التصويب، ومهارات العمل الجماعي، والتحكم بالكرة، وتحسين الأداء الرياضي.";
-                document.getElementById("btn3").textContent = "تواصل مع المدرب";
-                document.getElementById("details3").textContent = "التفاصيل";
-
-                document.getElementById("sport4").textContent = "السباحة";
-                document.getElementById("desc4").textContent =
-                "مدرب سباحة يمتلك أكثر من 15 سنة من الخبرة. متخصص في تدريب جميع الفئات العمرية، وتحسين التقنية، والقدرة على التحمل، والاستعداد للمسابقات.";
-                document.getElementById("btn4").textContent = "تواصل مع المدرب";
-                document.getElementById("details4").textContent = "التفاصيل";
-
-                document.getElementById("sport5").textContent = "الكروشيه وفن الريزن";
-                document.getElementById("desc5").textContent =
-                "مدربة للأشغال اليدوية تمتلك 8 سنوات من الخبرة. تقوم بتعليم الكروشيه، والتطريز، وفن الريزن، والمشاريع اليدوية الإبداعية للمبتدئين.";
-                document.getElementById("btn5").textContent = "تواصل مع المدرب";
-                document.getElementById("details5").textContent = "التفاصيل";
-
-                document.getElementById("sport6").textContent = "صناعة الشموع والمنتجات الزخرفية";
-                document.getElementById("desc6").textContent =
-                "فنانة أشغال يدوية تمتلك 5 سنوات من الخبرة في صناعة الشموع، وصناعة المنتجات الزخرفية.";
-                document.getElementById("btn6").textContent = "تواصل مع المدرب";
-                document.getElementById("details6").textContent = "التفاصيل";
-
-                document.getElementById("sport7").textContent = "دروس البيانو";
-                document.getElementById("desc7").textContent =
-                "مدربة موسيقى تمتلك 9 سنوات من الخبرة. تقدم دروسًا في العزف على البيانو وتدريبًا على النظريات الموسيقية للمبتدئين والطلاب متوسطي المستوى.";
-                document.getElementById("btn7").textContent = "تواصل مع المدرب";
-                document.getElementById("details7").textContent = "التفاصيل";
-
-                document.getElementById("sport8").textContent = "تعليم الجيتار";
-                document.getElementById("desc8").textContent =
-                "مدرب جيتار يمتلك 7 سنوات من الخبرة في تدريس العزف على الجيتار الأكوستيك والكهربائي.";
-                document.getElementById("btn8").textContent = "تواصل مع المدرب";
-                document.getElementById("details8").textContent = "التفاصيل";
-
-                document.getElementById("sport9").textContent = "تطوير الويب";
-                document.getElementById("desc9").textContent =
-                "مهندس برمجيات يمتلك 6 سنوات من الخبرة في تطوير الويب. يقوم بتدريس HTML وCSS وJavaScript ومشاريع مناسبة للمبتدئين من خلال التعلم العملي والتطبيقي.";
-                document.getElementById("btn9").textContent = "تواصل مع المدرب";
-                document.getElementById("details9").textContent = "التفاصيل";
-
-                document.getElementById("sport10").textContent = "أساسيات البرمجة وحل المشكلات";
-                document.getElementById("desc10").textContent =
-                "مطور بايثون يقوم بتدريس أساسيات البرمجة، وحل المشكلات، والأتمتة.";
-                document.getElementById("btn10").textContent = "تواصل مع المدرب";
-                document.getElementById("details10").textContent = "التفاصيل";
-
-                document.getElementById('about-title').textContent = 'من نحن';
-                document.getElementById('about-text').textContent = 'في SkillMasr نؤمن بأن الموهبة تنمو بالالتزام والتدريب الصحيح. تربط منصتنا الرياضيين بمدربين ذوي خبرة لمساعدتهم على تطوير مهاراتهم، وتحسين أدائهم، وتحقيق أهدافهم الرياضية.'
-                document.getElementById('contact-title').textContent = 'اتصل بنا';
-                document.getElementById('phone').textContent = 'هاتف: +201100351797';
-                document.getElementById('whatsapp').innerHTML = 'واتساب: <a href="https://wa.me/201100351797">اضغط هنا</a>';
-                document.getElementById('email').textContent = 'إيميل: skillmasr@gmail.com';
-                btn.textContent = 'Switch to English';
-                document.documentElement.lang = 'ar';
-                document.documentElement.dir = 'rtl';
-                isEnglish = false;
-            }
-        }
-           
-        
         function order(product) {
     const message = isEnglish
         ? `Hello, I want to book a session with ${product}`
-        : `مرحباً، أريد حجز حصة مع ${product}`;
 
     window.open(
         `https://wa.me/201100351797?text=${encodeURIComponent(message)}`,
@@ -606,39 +418,29 @@ search.addEventListener("input", function () {
         } else {
             card.style.display = "none";
         }
-
     });
-
 });
     </script>
     <script type="module">
 import { db } from "./firebase.js";
-
 import {
   collection,
   getDocs
-} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-
+} 
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 const snapshot = await getDocs(collection(db, "coaches"));
-
 snapshot.forEach((doc) => {
-
     const coach = doc.data();
-
     let container;
-
     if (coach.category === "Sports") {
         container = document.getElementById("sportsFirebase");
     }
-
     else if (coach.category === "Handmade") {
         container = document.getElementById("handmadeFirebase");
     }
-
     else if (coach.category === "Music") {
         container = document.getElementById("musicFirebase");
     }
-
     else if (coach.category === "Programming") {
         container = document.getElementById("programmingFirebase");
     }
