@@ -214,7 +214,6 @@ form.addEventListener("submit", async function (e) {
         category = otherCategory;
     }
 
-    const sport = document.getElementById("sport").value;
     const governorate = document.getElementById("governorate").value;
     const area = document.getElementById("area").value;
     const phone = document.getElementById("phone").value;
@@ -244,10 +243,9 @@ form.addEventListener("submit", async function (e) {
             return;
         }
 
-        await addDoc(collection(db, "coaches"), {
+       await addDoc(collection(db, "coaches"), {
             fullName,
             email,
-            sport,
             category,
             governorate,
             area,
@@ -255,7 +253,6 @@ form.addEventListener("submit", async function (e) {
             price,
             about
         });
-
         await signInWithEmailAndPassword(
             auth,
             email,
