@@ -45,13 +45,14 @@ button {
     <input type="text" id="name" placeholder="Full Name" required>
     <input type="email" id="email" placeholder="Email" required>
     <input type="password" id="password" placeholder="Password" required>
+    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
 
     <button type="submit">Create Account</button>
   </form>
 
 </div>
 
-<script src="script.js">
+<script type="module">
     document.getElementById("signupForm").addEventListener("submit", function(e) {
   e.preventDefault();
 
@@ -64,6 +65,84 @@ button {
   console.log("Password:", password);
 
   alert("Account created successfully!");
+});
+  import { auth, db } from "./firebase.js";
+
+import {
+createUserWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+import {
+collection,
+addDoc
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+const form = document.getElementById("signupForm");
+
+form.addEventListener("submit", async(e)=>{
+
+e.preventDefault();
+
+const name=document.getElementById("name").value;
+
+const email=document.getElementById("email").value;
+
+const password=document.getElementById("password").value;
+
+const confirmPassword=document.getElementById("confirmPassword").value;
+
+const governorate=document.getElementById("governorate").value;
+
+const interest=document.getElementById("interest").value;
+
+if(password!==confirmPassword){
+
+alert("Passwords do not match");
+
+return;
+
+}
+
+try{
+
+const userCredential=
+
+await createUserWithEmailAndPassword(
+
+auth,
+
+email,
+
+password
+
+);
+
+await addDoc(collection(db,"trainees"),{
+
+uid:userCredential.user.uid,
+
+name,
+
+email,
+
+governorate,
+
+interest
+
+});
+
+alert("Account created successfully");
+
+window.location.href="index.html";
+
+}
+
+catch(error){
+
+alert(error.message);
+
+}
+
 });
 </script>
 
