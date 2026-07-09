@@ -104,7 +104,13 @@ label{
     <option value="Programming">Programming</option>
     <option value="Other">Other</option>
 </select>
+<label>Specialization</label>
 
+<input
+type="text"
+id="specialization"
+placeholder="Example: Football, Swimming, Piano, Web Development">
+    
 <div id="otherCategoryDiv" style="display:none;">
     <label>Write your category</label>
     <input type="text" id="otherCategory" placeholder="Example: Photography">
@@ -213,7 +219,7 @@ form.addEventListener("submit", async function (e) {
     if (category == "Other") {
         category = otherCategory;
     }
-
+    const specialization =document.getElementById("specialization").value;
     const governorate = document.getElementById("governorate").value;
     const area = document.getElementById("area").value;
     const phone = document.getElementById("phone").value;
