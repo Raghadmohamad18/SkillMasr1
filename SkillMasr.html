@@ -373,14 +373,14 @@
     <script>
         let editAccess = false;
         function order(product) {
-    const message = isEnglish
-        ? `Hello, I want to book a session with ${product}`
 
-    window.open(
-        `https://wa.me/201100351797?text=${encodeURIComponent(message)}`,
-        '_blank'
-    );
-}
+            const message = `Hello, I want to book a session with ${product}`;
+        
+            window.open(
+                `https://wa.me/201100351797?text=${encodeURIComponent(message)}`,
+                "_blank"
+            );
+        }
 function showCategory(categoryId){
 
     const sections =
