@@ -95,6 +95,8 @@ label{
 
     <label>choose your category</label>
 
+<label>Choose your category</label>
+
 <select id="category" onchange="toggleOtherCategory()" required>
     <option value="">Select Category</option>
     <option value="Sports">Sports</option>
@@ -103,6 +105,11 @@ label{
     <option value="Programming">Programming</option>
     <option value="Other">Other</option>
 </select>
+
+<div id="otherCategoryDiv" style="display:none;">
+    <label>Write New Category</label>
+    <input type="text" id="otherCategory" placeholder="Example: Photography">
+</div>
     <label>Write your Skill / Sport</label>
 <input type="text"
        id="specialization"
