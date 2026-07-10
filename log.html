@@ -10,14 +10,12 @@
     font-family:Arial,sans-serif;
     background:#f5f5f5;
 }
-
 .page{
     display:flex;
     flex-direction:column;
     align-items:center;
     padding:40px 20px;
 }
-
 .welcome{
     background:#1F1F1F;
     color:white;
@@ -28,17 +26,14 @@
     text-align:center;
     margin-bottom:25px;
 }
-
 .welcome h1{
     margin:0;
     color:#D4AF37;
 }
-
 .welcome h3{
     margin-top:10px;
     font-weight:normal;
 }
-
 .form{
     background:white;
     width:100%;
@@ -47,7 +42,6 @@
     border-radius:15px;
     box-shadow:0 8px 20px rgba(0,0,0,.15);
 }
-
 label{
     display:block;
     text-align:left;
@@ -56,7 +50,6 @@ label{
     font-weight:bold;
     color:#333;
 }
-
 input{
     width:100%;
     padding:12px;
@@ -65,7 +58,6 @@ input{
     font-size:15px;
     box-sizing:border-box;
 }
-
 button{
     width:100%;
     margin-top:25px;
@@ -79,16 +71,13 @@ button{
     cursor:pointer;
     transition:.3s;
 }
-
 button:hover{
     background:#388E3C;
 }
-
 .sign{
     margin-top:20px;
     text-align:center;
 }
-
 .sign p{
     color:#444;
     margin-bottom:8px;
@@ -158,37 +147,23 @@ button:hover{
             <p>💬 <span id="whatsapp">whatsapp: <a href="https://wa.me/201100351797">click here</a></span></p>
             <p>📧<span id="contact-email">email: Skillmasr@gmail.com</span></p>
     </section>
-
+    
            <script type="module">
 import { auth } from "./firebase.js";
-
 import {
   signInWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-
 const form = document.getElementById("loginForm");
-
 form.addEventListener("submit", async (e) => {
-
     e.preventDefault();
-
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-
     try {
-
         await signInWithEmailAndPassword(auth, email, password);
-
         alert("Login successful!");
-
         window.location.href = "SkillMasr.html";
-
     } catch (error) {
-
-        alert("Invalid email or password");
-
-    }
-
+        alert("Invalid email or password");}
 });
 </script>
 </body>
