@@ -12,23 +12,21 @@
   height: 100vh;
 }
 
-.container {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.form{
+    background:white;
+    color:#1F1F1F;
+    padding:25px;
+    border-radius:15px;
+    width:90%;
+    max-width:600px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
 }
+        input{
+            border-radius: 5px;}
 
-input {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
-}
-
-button{
-    height: 50px;
-    width: 90px;
+ button{
+    width:150px;
+    height:45px;
     background-color:#C62828;
     border-radius: 20%;
     color:white;
@@ -41,8 +39,7 @@ button{
 </head>
 
 <body>
-  <center>
-<div class="container">
+<div class="form">
   <h2>Sign Up</h2>
 
   <form id="signupForm">
@@ -57,19 +54,6 @@ button{
 </div>
 
 <script type="module">
-    document.getElementById("signupForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  let name = document.getElementById("name").value;
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
-
-  console.log("Name:", name);
-  console.log("Email:", email);
-  console.log("Password:", password);
-
-  alert("Account created successfully!");
-});
   import { auth, db } from "./firebase.js";
 
 import {
@@ -95,10 +79,6 @@ const password=document.getElementById("password").value;
 
 const confirmPassword=document.getElementById("confirmPassword").value;
 
-const governorate=document.getElementById("governorate").value;
-
-const interest=document.getElementById("interest").value;
-
 if(password!==confirmPassword){
 
 alert("Passwords do not match");
@@ -122,28 +102,21 @@ password
 );
 
 await addDoc(collection(db,"trainees"),{
-
-uid:userCredential.user.uid,
-
-name,
-
-email,
-
-governorate,
-
-interest
-
+    uid:userCredential.user.uid,
+    name,
+    email,
 });
+
+localStorage.setItem("loggedIn", "true");
+localStorage.setItem("coachName", name);
 
 alert("Account created successfully");
 
-window.location.href="index.html";
+window.location.href = "details.html?name=" + encodeURIComponent(name);
 
-}
+} catch(error){
 
-catch(error){
-
-alert(error.message);
+    alert(error.message);
 
 }
 
