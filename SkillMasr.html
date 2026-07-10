@@ -199,11 +199,12 @@
     </center>
         <!--sports section -->
     <div class="categories">
-        <button id='1'onclick="showCategory('sports')">⚽ Sports</button>
-        <button id='2' onclick="showCategory('handmade')">🎨 Handmade</button>        
-        <button id='3' onclick="showCategory('music')">🎵 Music</button>
-        <button id='4' onclick="showCategory('programming')">💻 Programming</button>
-    </div>
+        <button onclick="showCategory('sports')">⚽ Sports</button>
+        <button onclick="showCategory('handmade')">🎨 Handmade</button>
+        <button onclick="showCategory('music')">🎵 Music</button>
+        <button onclick="showCategory('programming')">💻 Programming</button>
+        <button onclick="showCategory('other')">✨ Other</button>
+</div>
     
     <section id="sports" class="category"style="display:block;">
        <h2 class="section-title">Sports</h2>
@@ -343,6 +344,13 @@
            <div id="programmingFirebase" class="products"></div>
         </div>
     </section>
+    <section id="other" class="category" style="display:none;">
+
+    <h2 class="section-title">Other</h2>
+
+    <div id="otherFirebase" class="products"></div>
+
+    </section>
 
     <!--about us section -->
     <section class="about-section">
@@ -444,7 +452,9 @@ snapshot.forEach((doc) => {
     else if (coach.category === "Programming") {
         container = document.getElementById("programmingFirebase");
     }
-
+    else if (coach.category === "Other") {
+    container = document.getElementById("otherFirebase");
+}
     else {
         return;
     }
