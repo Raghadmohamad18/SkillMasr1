@@ -94,10 +94,8 @@ label{
 <input type="email" id="email" placeholder="Enter your email" required>
 
     <label>choose your category</label>
-
-<label>Choose your category</label>
-
-<select id="category" onchange="toggleOtherCategory()" required>
+    
+<select id="category" required>
     <option value="">Select Category</option>
     <option value="Sports">Sports</option>
     <option value="Handmade">Handmade</option>
@@ -105,11 +103,7 @@ label{
     <option value="Programming">Programming</option>
     <option value="Other">Other</option>
 </select>
-
-<div id="otherCategoryDiv" style="display:none;">
-    <label>Write New Category</label>
-    <input type="text" id="otherCategory" placeholder="Example: Photography">
-</div>
+    
     <label>Write your Skill / Sport</label>
 <input type="text"
        id="specialization"
@@ -212,12 +206,7 @@ form.addEventListener("submit", async function (e) {
     const email = document.getElementById("email").value;
 
     let category = document.getElementById("category").value;
-    const otherCategory = document.getElementById("otherCategory").value;
-
-    if (category === "Other") {
-        category = otherCategory;
-    }
-    const specialization = document.getElementById("specialization").value;
+    let specialization = document.getElementById("specialization").value;
     const governorate = document.getElementById("governorate").value;
     const area = document.getElementById("area").value;
     const phone = document.getElementById("phone").value;
@@ -278,20 +267,5 @@ await addDoc(collection(db, "coaches"), {
 
 });
     </script>
-    
-    <script>
-function toggleOtherCategory() {
-
-    const category = document.getElementById("category").value;
-    const div = document.getElementById("otherCategoryDiv");
-
-    if (category === "Other") {
-        div.style.display = "block";
-    } else {
-        div.style.display = "none";
-    }
-
-}
-</script>
 </body>
 </html>
