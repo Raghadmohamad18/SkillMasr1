@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
     <style>
-       .welcome{
-    height:auto;
+        body{
+    background:#F5F5F5;
+    font-family:Arial,sans-serif;
+    margin:0;
+}
+      .welcome{
+    background:#1F1F1F;
+    color:white;
+    padding:25px;
+    border-radius:15px;
     width:90%;
     max-width:600px;
-    background-color:#000000;
-    color:white;
-    padding:20px;
-    border-radius:15px;
-    margin-top:30px;
+    margin:30px auto;
 }
         .page{
     display:flex;
@@ -37,16 +41,14 @@
             text-decoration: underline;
         }
         .form{
-            display:flex;
-            flex-direction:column;
-            background:#D4AF37;
-            color:white;
-            width:90%;
-            max-width:600px;
-            padding:25px;
-            border-radius:15px;
-            box-shadow:0 0 10px rgba(0,0,0,0.2);
-        }
+    background:white;
+    color:#1F1F1F;
+    padding:25px;
+    border-radius:15px;
+    width:90%;
+    max-width:600px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
         input{
             border-radius: 5px;
         }
@@ -69,14 +71,6 @@
         .contact-section a{
         color:#D4AF37;
        }
-        footer{
-            margin-top:40px;
-            text-align:center;
-            background:#000000;
-            color:white;
-            padding:20px;
-            border-top:3px solid #C62828;
-        }
     </style>
 </head>
 <body>
@@ -109,9 +103,6 @@
             <p>📧 <span id="email">email: Skillmasr@gmail.com</span></p>
     </section>
 
-    <footer>
-             <p id="footer-text">© 2026 SkillMasr - All Rights Reserved</p>
-    </footer>
     <script>
             document.getElementById("loginForm").addEventListener("submit", function(e){
                 e.preventDefault();
