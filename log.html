@@ -81,11 +81,11 @@
         </div>
         <div class="form">
             <form id="loginForm">
-                <label>Phone number</label>
-                <input type="tel"placeholder="01XXXXXXXXX" required><br><br>
+                <label>Email</label>
+                <input type="email" id="email" placeholder="Enter your email" required>
 
                 <label>password</label>
-                <input type="password" required><br><br>
+                <input type="password" id="password" placeholder="Enter your password" required>
 
                 <button type="submit">Log in</button>
             </form>
@@ -104,19 +104,38 @@
     </section>
 
     <script>
-            document.getElementById("loginForm").addEventListener("submit", function(e){
-                e.preventDefault();
-            
-                localStorage.setItem("loggedIn", "true");
-            
-                const coach = localStorage.getItem("coachName");
-            
-                if(coach){
-                    window.location.href = "details.html?name=" + encodeURIComponent(coach);
-                }else{
-                    window.location.href = "SkillMasr.html";
-                }
-            });
+           <script type="module">
+import { auth } from "./firebase.js";
+
+import {
+  signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+const form = document.getElementById("loginForm");
+
+form.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    try {
+
+        await signInWithEmailAndPassword(auth, email, password);
+
+        alert("Login successful!");
+
+        window.location.href = "SkillMasr.html";
+
+    } catch (error) {
+
+        alert("Invalid email or password");
+
+    }
+
+});
+</script>
     </script>
 </body>
 </html>
