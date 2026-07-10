@@ -475,9 +475,9 @@ snapshot.forEach((doc) => {
     Contact Coach
     </button>
     
-    <button onclick="window.location.href='details.html?id=${doc.id}'">
+    <button onclick="goDetails('${coach.fullName}')">
     View Details
-    </button>
+</button>
 </div>
     `;
 });
