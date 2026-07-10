@@ -10,38 +10,28 @@
     margin: 50px 0;
 }
 
+.welcome{
+    color: white;
+    text-align: left;
+}
+
 .welcome h1{
     font-size: 48px;
-    color: #000000;
-    font-weight: bold;
     margin-bottom: 10px;
-    letter-spacing: 2px;
 }
 
 .welcome h3{
     color: #C62828;
     font-size: 22px;
     font-weight: normal;
-    letter-spacing: 2px;
-}
-
-.welcome::after{
-    content: "";
-    display: block;
-    width: 80px;
-    height: 4px;
-    background: #C62828;
-    margin: 20px auto 0;
-    border-radius: 10px;
 }
         .container{
             display: flex;
-            justify-content: center;
             align-items: center;
-            height: 300px;
-            width: 1330px;
-            border: 90px;
-            background-color: #000000;
+            justify-content: center;
+            gap: 50px;
+            height: 320px;
+            background: #000000;
         }
         .image{
             height: 200px;
@@ -104,15 +94,14 @@
         <a href="sign.html"></a>
     </nav>
     <center>
-    <div class="container">
-       <center><img src="https://i.pinimg.com/736x/9c/de/6e/9cde6ec2da724e23df446359e228298c.jpg" class="image"></center> 
-    </div>
-        
+        <div class="container">
+    <img src="https://i.pinimg.com/736x/9c/de/6e/9cde6ec2da724e23df446359e228298c.jpg" class="image">
+
     <div class="welcome">
-        <h1>Welcome to SkillMasr .</h1>
+        <h1>Welcome to SkillMasr</h1>
         <h3>Turn passion into skill</h3>
     </div>
-     
+</div>  
     <div class="choice">
         <h2> Are you here as a <span>coach</span> or <span>trainee </span>?</h2>       
         <a href="trainer.html"><button value="coach" class="button">Coach</button></a> 
