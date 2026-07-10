@@ -103,10 +103,10 @@ label{
     <option value="Programming">Programming</option>
     <option value="Other">Other</option>
 </select>
-    <div id="otherCategoryDiv" style="display:none;">
-    <label>Write Sport / Skill</label>
-    <input type="text" id="otherCategory" placeholder="Example: Photography">
-</div>
+    <label>Write your Skill / Sport</label>
+<input type="text"
+       id="specialization"
+       placeholder="Example: Football, Volleyball, Guitar, Python">
 <label>Governorate</label>
 
 <select id="governorate" required>
@@ -192,7 +192,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 import {
-  signInWithEmailAndPassword
+  createUserWithEmailAndPassword
 } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
 
 const form = document.getElementById("coachForm");
@@ -210,6 +210,7 @@ form.addEventListener("submit", async function (e) {
     if (category == "Other") {
         category = otherCategory;
     }
+    const specialization = document.getElementById("specialization").value;
     const governorate = document.getElementById("governorate").value;
     const area = document.getElementById("area").value;
     const phone = document.getElementById("phone").value;
@@ -250,6 +251,7 @@ await addDoc(collection(db, "coaches"), {
     fullName,
     email,
     category,
+    specialization,
     governorate,
     area,
     phone,
