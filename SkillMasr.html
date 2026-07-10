@@ -16,19 +16,12 @@
             direction: rtl;
             max-width: 800px;
             margin: 40px auto;
-        }
-        #about-text{
-            text-align: center;
-            direction: rtl;
-            line-height: 1.8;
-        }
-        .header-content{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-        }
-
+            }
+            #about-text{
+                text-align: center;
+                direction: rtl;
+                line-height: 1.8;
+            }
             header{
             position: relative;
             text-align: center;
@@ -36,25 +29,18 @@
             background:#000000;
             border-bottom: 5px solid #C62828;
             color: white;
-        }
-
-        #title {
-            font-size: 70px;
-            margin-bottom: 0px;
-            font-weight: bold;
-        }
-        
-        #subtitle {
-            font-size: 18px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .section-title {
+            }
+    
+            #title {
+                font-size: 70px;
+                margin-bottom: 0px;
+                font-weight: bold;
+            }
+            
+            #subtitle {
+                font-size: 18px;
+            }
+            .section-title {
             font-size: 28px;
             color: #000000;
             margin-bottom: 30px;
@@ -68,70 +54,67 @@
             justify-content:center;
             flex-wrap:wrap;
             gap:20px;
-        }
-
-        .product {
-            background: #000000;
-            color: white;
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-            transition: 0.3s;
-            text-align: center;
-            height: 550px;
-            width:250px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .product button + button {
-          margin-top: 10px;}
-
-        .product img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-        .product h3 {
-            margin: 15px 0 10px;
-            font-size: 20px;
-        }
-        
-        .product p {
-            color: #FFFFFF;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        
-        .price {
-            font-size: 24px;
-            font-weight: bold;
-            color: #FFFFFF;
-            margin: 10px 0;
-        }
-        
-        button {
-            background: #C62828;
-            color: white;
-            border: none;
-            padding: 12px 18px;
-            border-radius: 8px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-            width: 100%;
-            font-size: 16px;
-        }
-
-        button:hover {
-            background: #A00000;
-        }
-        
-        section { 
-            margin: 40px 0 20px; 
-        }
-
+            }
+            .product {
+                background: #000000;
+                color: white;
+                border-radius: 15px;
+                padding: 20px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+                transition: 0.3s;
+                text-align: center;
+                height: 550px;
+                width:250px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .product button + button {
+              margin-top: 10px;}
+    
+            .product img {
+                width: 100%;
+                height: 180px;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+            .product h3 {
+                margin: 15px 0 10px;
+                font-size: 20px;
+            }
+            
+            .product p {
+                color: #FFFFFF;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+            
+            .price {
+                font-size: 24px;
+                font-weight: bold;
+                color: #FFFFFF;
+                margin: 10px 0;
+            }
+            
+            button {
+                background: #C62828;
+                color: white;
+                border: none;
+                padding: 12px 18px;
+                border-radius: 8px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: 0.3s;
+                width: 100%;
+                font-size: 16px;
+            }
+            button:hover {
+                background: #A00000;
+            }
+           section{
+        margin:40px 0 20px;
+        text-align:center;
+    }
         .contact-section {
             background: #000000;
             color: white;
@@ -163,9 +146,6 @@
             flex-wrap:wrap;
             margin:30px 0;
         }
-        section{
-    text-align:center;
-}
         .categories button{
     width:auto;
     padding:12px 25px;
@@ -345,11 +325,8 @@
         </div>
     </section>
     <section id="other" class="category" style="display:none;">
-
-    <h2 class="section-title">Other</h2>
-
-    <div id="otherFirebase" class="products"></div>
-
+        <h2 class="section-title">Other</h2>
+        <div id="otherFirebase" class="products"></div>
     </section>
 
     <!--about us section -->
@@ -363,7 +340,6 @@
         </p>
     </section>
     
-        
     <!--contact us section -->
     <section id="contact" class="contact-section">
         <h2 id="contact-title"> Contact Us</h2>
@@ -381,105 +357,78 @@
     <script>
         let editAccess = false;
         function order(product) {
-
             const message = `Hello, I want to book a session with ${product}`;
-        
             window.open(
                 `https://wa.me/201100351797?text=${encodeURIComponent(message)}`,
-                "_blank"
-            );
-        }
-function showCategory(categoryId){
-
-    const sections =
-    document.querySelectorAll('.category');
-
-    sections.forEach(section=>{
-        section.style.display='none';
+                "_blank" );}
+        function showCategory(categoryId){
+            const sections =
+            document.querySelectorAll('.category');
+            sections.forEach(section=>{
+                section.style.display='none';});
+            document.getElementById(categoryId).style.display='block';}
+        function goDetails(name){
+            if(localStorage.getItem("loggedIn") !== "true"){
+                localStorage.setItem("coachName", name);
+                window.location.href = "log.html";
+                return;}
+        window.location.href =
+        "details.html?name=" + encodeURIComponent(name);}
+            const search = document.getElementById("search");
+            search.addEventListener("input", function () {
+            const value = this.value.toLowerCase();
+            document.querySelectorAll(".coach-card").forEach(card => {
+            const text = card.innerText.toLowerCase();
+            if (text.includes(value)) {
+                card.style.display = "flex";
+            } else {
+                card.style.display = "none";
+            }
+        });
     });
-
-    document.getElementById(categoryId).style.display='block';
-}
-function goDetails(name){
-
-    if(localStorage.getItem("loggedIn") !== "true"){
-        localStorage.setItem("coachName", name);
-        window.location.href = "log.html";
-        return;
-    }
-
-    window.location.href =
-    "details.html?name=" + encodeURIComponent(name);
-}
-        const search = document.getElementById("search");
-
-search.addEventListener("input", function () {
-
-    const value = this.value.toLowerCase();
-
-    document.querySelectorAll(".coach-card").forEach(card => {
-
-        const text = card.innerText.toLowerCase();
-
-        if (text.includes(value)) {
-            card.style.display = "flex";
-        } else {
-            card.style.display = "none";
-        }
-    });
-});
     </script>
     <script type="module">
-import { db } from "./firebase.js";
-import {
-  collection,
-  getDocs
-} 
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-const snapshot = await getDocs(collection(db, "coaches"));
-snapshot.forEach((doc) => {
-    const coach = doc.data();
-    let container;
-    if (coach.category === "Sports") {
-        container = document.getElementById("sportsFirebase");
+        import { db } from "./firebase.js";
+        import {
+          collection,
+          getDocs
+        } 
+        from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+        const snapshot = await getDocs(collection(db, "coaches"));
+        snapshot.forEach((doc) => {
+        const coach = doc.data();
+        let container;
+        if (coach.category === "Sports") {
+            container = document.getElementById("sportsFirebase");
+        }
+        else if (coach.category === "Handmade") {
+            container = document.getElementById("handmadeFirebase");
+        }
+        else if (coach.category === "Music") {
+            container = document.getElementById("musicFirebase");
+        }
+        else if (coach.category === "Programming") {
+            container = document.getElementById("programmingFirebase");
+        }
+        else if (coach.category === "Other") {
+        container = document.getElementById("otherFirebase");
     }
-    else if (coach.category === "Handmade") {
-        container = document.getElementById("handmadeFirebase");
-    }
-    else if (coach.category === "Music") {
-        container = document.getElementById("musicFirebase");
-    }
-    else if (coach.category === "Programming") {
-        container = document.getElementById("programmingFirebase");
-    }
-    else if (coach.category === "Other") {
-    container = document.getElementById("otherFirebase");
-}
-    else {
-        return;
-    }
-
-        container.innerHTML+=`
-
-    <div class="product coach-card">
-    
-    <h3>${coach.fullName}</h3>
-    
-    <h3>${coach.specialization}</h3>
-    
-    <p>${coach.about}</p>
-    
-    <p class="price">${coach.price} EGP / Session</p>
-    
-    <button onclick="order('${coach.fullName}')">
+        else {
+            return;
+        }
+            container.innerHTML+=`
+        <div class="product coach-card">
+        <h3>${coach.fullName}</h3>
+        <h3>${coach.specialization}</h3>
+        <p>${coach.about}</p>
+        <p class="price">${coach.price} EGP / Session</p>
+        <button onclick="order('${coach.fullName}')">
     Contact Coach
     </button>
-    
     <button onclick="goDetails('${coach.fullName}')">
     View Details
 </button>
-</div>
-    `;
+</div>`;
 });
 </script>
 </body>
