@@ -52,8 +52,9 @@ button{
     border-radius:8px;
     cursor:pointer;
 }
-.button:hover{
+button:hover{
     background:#A00000;
+}
 </style>
 
 </head>
@@ -238,36 +239,24 @@ let coach;
 const id = params.get("id");
 
 if (id) {
-
     const coachRef = doc(db, "coaches", id);
-
     const coachSnap = await getDoc(coachRef);
 
     if (coachSnap.exists()) {
-
         coach = coachSnap.data();
-
-        coach.img = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+        coach.img = coach.imageUrl || "https://cdn-icons-png.flaticon.com/512/149/149071.png";
         coach.certs = [];
         coach.trainingPlaces = [];
-
     }
-
 } else {
-
     const name = params.get("name");
-
     coach = data[name];
-
 }
-
 if (!coach) {
-
     document.body.innerHTML = "<h2>Coach not found</h2>";
-
     throw new Error("No coach found");
-
 }
+document.getElementById("name").textContent = coach.name;
 document.getElementById("sport").textContent = coach.sport;
 document.getElementById("img").src = coach.img;
 document.getElementById("area").textContent = coach.area;
