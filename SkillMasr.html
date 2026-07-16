@@ -411,7 +411,7 @@
         }
         container.innerHTML +=`
         <div class="product coach-card">
-        <img src="${coach.imageUrl}" alt="${coach.fullName}">
+        <img src="${coach.imageUrl || 'https://via.placeholder.com/250x180'}" alt="Coach Photo">
         <h3>${coach.fullName}</h3>
         <h3>${coach.specialization}</h3>
         <p>${coach.about}</p>
