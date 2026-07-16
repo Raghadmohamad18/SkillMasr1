@@ -17,7 +17,7 @@
             max-width: 800px;
             margin: 40px auto;
             }
-            #about-text{
+            .about-section p{
                 text-align: center;
                 direction: rtl;
                 line-height: 1.8;
@@ -30,13 +30,13 @@
             color: white;
             }
     
-            #title {
+            header h1 {
                 font-size: 70px;
-                margin-bottom: 0px;
+                margin-bottom: 0;
                 font-weight: bold;
             }
             
-            #subtitle {
+            header p {
                 font-size: 18px;
             }
             .section-title {
@@ -160,8 +160,8 @@
 </head>
 <body>
     <header>
-        <h1 id="title">SkillMasr</h1>
-        <p id="subtitle">Turn Passion Into Skill</p>
+        <h1 >SkillMasr</h1>
+        <p>Turn Passion Into Skill</p>
     </header>
 <div style="text-align:center; margin:30px 0;">
         <input
@@ -177,7 +177,7 @@
         <button onclick="showCategory('other')">✨ Other</button>
 </div>
     
-    <section id="sports" class="category"style="display:block;">
+    <section id="sports" class="category" style="display:block;">
        <h2 class="section-title">Sports</h2>
         <div class="products">
             <div class="product coach-card">
@@ -328,9 +328,8 @@
 
     <!--about us section -->
     <section class="about-section">
-        <h2 id="about-title" class="section-title">About Us</h2>
-
-        <p id="about-text">
+        <h2 class="section-title">About Us</h2>
+        <p>
         At SkillMasr, we believe that talent grows through dedication and proper training.
         Our platform connects athletes with experienced coaches to help them develop their
         skills, improve their performance, and achieve their sporting goals.
@@ -338,15 +337,15 @@
     </section>
     
     <!--contact us section -->
-    <section id="contact" class="contact-section">
-        <h2 id="contact-title"> Contact Us</h2>
-        <p id="phone">📱Phone No.: +201100351797</p>
-        <p id="whatsapp">💬WhatsApp:<a href="https://wa.me/201100351797">Click Here</a></p>
-        <p id="email">📧Email: skillmasr@gmail.com</p>
+    <section class="contact-section">
+        <h2> Contact Us</h2>
+        <p>📱Phone No.: +201100351797</p>
+        <p>💬WhatsApp:<a href="https://wa.me/201100351797">Click Here</a></p>
+        <p>📧Email: skillmasr@gmail.com</p>
     </section>
     
     <footer>
-        <p id="footer-text">© 2026 SkillMasr - All Rights Reserved</p>
+        <p>© 2026 SkillMasr - All Rights Reserved</p>
     </footer>
     
     <script>
@@ -412,6 +411,7 @@
         }
             container.innerHTML+=`
         <div class="product coach-card">
+        <img src="${coach.imageUrl}" alt="${coach.fullName}">
         <h3>${coach.fullName}</h3>
         <h3>${coach.specialization}</h3>
         <p>${coach.about}</p>
