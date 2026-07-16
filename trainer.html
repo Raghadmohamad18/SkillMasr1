@@ -246,9 +246,7 @@ form.addEventListener("submit", async function (e) {
         let imageUrl = "";
 
 if (photo) {
-
     const formData = new FormData();
-
     formData.append("file", photo);
     formData.append("upload_preset", "rbqrpayg");
     const response = await fetch(
@@ -258,12 +256,10 @@ if (photo) {
             body: formData
         }
     );
-
     const data = await response.json();
-
+    console.log(data);
     imageUrl = data.secure_url;
-}
-        
+}    
 await addDoc(collection(db, "coaches"), {
     uid: userCredential.user.uid,
     fullName,
@@ -277,13 +273,9 @@ await addDoc(collection(db, "coaches"), {
     about,
     imageUrl
 });
-
         localStorage.setItem("loggedIn", "true");
-
-        alert("تم حفظ البيانات بنجاح ✅");
-
+        alert("تم حفظ البيانات بنجاح");
         window.location.href = "index.html";
-
     } catch (error) {
         alert(error.message);
     }
