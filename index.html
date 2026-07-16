@@ -8,10 +8,7 @@
         .welcome{
     text-align: center;
     margin: 50px 0;
-}
-.welcome{
     color: white;
-    text-align: center;
 }
 .welcome h1{
     font-size: 50px;
@@ -38,9 +35,6 @@
             border-radius: 50%;
            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
         }
-        h1{
-            margin: 2px;
-        }
         .button{
             height: 70px;
             width: 120px;
@@ -51,11 +45,11 @@
             letter-spacing: 2px;
         }
         .button:hover{
-            width: 110px;
             background-color: #A00000;
         }
         body{
             background-color: #FFFFFF;
+            text-align:center;
         }
         .contact-section {
             background: #000000;
@@ -85,15 +79,6 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="index.html"></a>
-        <a href="SkillMasr.html"></a>
-        <a href="log.html"></a>
-        <a href="trainer.html"></a>
-        <a href="details.html"></a>
-        <a href="sign.html"></a>
-    </nav>
-    <center>
         <div class="container">
     <img src="https://i.pinimg.com/736x/9c/de/6e/9cde6ec2da724e23df446359e228298c.jpg" class="image">
 
@@ -104,10 +89,9 @@
 </div>  
     <div class="choice">
         <h2> Are you here as a <span>coach</span> or <span>trainee </span>?</h2>       
-        <a href="trainer.html"><button value="coach" class="button">Coach</button></a> 
-        <a href="SkillMasr.html"><button value="trainee" class="button">Trainee</button></a>
+        <a href="trainer.html"><button class="button">Coach</button></a> 
+        <a href="SkillMasr.html"><button class="button">Trainee</button></a>
     </div>
-     </center>
         
     <section id="contact" class="contact-section">
             <h2 id="contact-title">Contact Us</h2>
@@ -119,6 +103,5 @@
     <footer>
              <p id="footer-text">© 2026 SkillMasr - All Rights Reserved</p>
     </footer>
-   <script type="module" src="displayCoaches.js"></script>
 </body>
 </html>
