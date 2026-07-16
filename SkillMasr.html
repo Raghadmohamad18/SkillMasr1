@@ -23,7 +23,6 @@
                 line-height: 1.8;
             }
             header{
-            position: relative;
             text-align: center;
             padding: 80px 20px;
             background:#000000;
@@ -61,7 +60,6 @@
                 border-radius: 15px;
                 padding: 20px;
                 box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-                transition: 0.3s;
                 text-align: center;
                 height: 550px;
                 width:250px;
@@ -85,14 +83,11 @@
             
             .product p {
                 color: #FFFFFF;
-                font-size: 14px;
                 line-height: 1.6;
             }
             
             .price {
                 font-size: 24px;
-                font-weight: bold;
-                color: #FFFFFF;
                 margin: 10px 0;
             }
             
@@ -106,7 +101,6 @@
                 cursor: pointer;
                 transition: 0.3s;
                 width: 100%;
-                font-size: 16px;
             }
             button:hover {
                 background: #A00000;
@@ -129,7 +123,6 @@
         }
         .contact-section a {
             color: #D4AF37;
-            text-decoration: none;
         }
         footer {
             margin-top: 40px;
@@ -153,8 +146,6 @@
     background:#C62828;
     color:white;
     border:2px solid #C62828;
-    cursor:pointer;
-    font-weight:bold;
     transition:0.3s;
 }
 
@@ -172,11 +163,11 @@
         <h1 id="title">SkillMasr</h1>
         <p id="subtitle">Turn Passion Into Skill</p>
     </header>
-    <center>
+<div style="text-align:center; margin:30px 0;">
         <input
         id="search"type="search" placeholder="Search for a sport or craft"
         style="width:500px; height:45px;">
-    </center>
+    </div>
         <!--sports section -->
     <div class="categories">
         <button onclick="showCategory('sports')">⚽ Sports</button>
@@ -190,144 +181,150 @@
        <h2 class="section-title">Sports</h2>
         <div class="products">
             <div class="product coach-card">
-                <img id="img1" src="https://t4.ftcdn.net/jpg/02/11/51/53/360_F_211515361_bnIbyKadClzn3hJT0zCPPuPApcG7k3lC.jpg" alt="Football player">
-                <h3>Ahmed Hassan</h3>
-                <h3 id="sport1">Football</h3>
-                <p id="desc1">Former football player with over 5 years of coaching experience.
-                    Specialized in improving fitness, ball control, passing accuracy,
-                    and match tactics for beginners and intermediate players.</p>
-                <p class="price">50 EGP / Session</p>
-                <button id="btn1" onclick="order('Ahmed Hassan')">Contact the coach</button>
-                <button id="details1" onclick="goDetails('Ahmed Hassan')">View Details</button>
-            </div>
+                    <img src="https://t4.ftcdn.net/jpg/02/11/51/53/360_F_211515361_bnIbyKadClzn3hJT0zCPPuPApcG7k3lC.jpg" alt="Football player">
+                    <h3>Ahmed Hassan</h3>
+                    <h3>Football</h3>
+                    <p>Former football player with over 5 years of coaching experience.
+                        Specialized in improving fitness, ball control, passing accuracy,
+                        and match tactics for beginners and intermediate players.</p>
+                    <p class="price">50 EGP / Session</p>
+                    <button onclick="order('Ahmed Hassan')">Contact the coach</button>
+                    <button onclick="goDetails('Ahmed Hassan')">View Details</button>
+                </div>
                 
-            <div class="product coach-card">
-                <img src="https://media.istockphoto.com/id/1397734203/vector/couple-fitness-logo-vector.jpg?s=612x612&w=0&k=20&c=o-MflGLdwx7Z5R2ZUyOwggGNCsMabFxCkODsRg4iMY0=" alt="fitness player">
-                <h3 >Sara Mohamed </h3>
-                <h3 id="sport2">Fitness</h3>
-                <p id="desc2">Certified fitness coach with more than 10 years of experience.
-                    Helps clients achieve their goals through customized workout plans,
-                    nutrition guidance, and continuous motivation.</p>
-                <p class="price">100 EGP / Session</p>                    
-                <button id="btn2" onclick="order('Sara Mohamed')">Contact the coach</button>
-                <button id="details2" onclick="goDetails('Sara Mohamed')">View details</button>
-            </div>
-
-            <div class="product coach-card">
-                <img src="https://www.shutterstock.com/image-vector/basketball-player-silhouette-logo-vector-260nw-2717047395.jpg" alt="basketball player">
-                <h3>Omar Ali</h3>
-                <h3 id="sport3">Basketball</h3>
-                <p id="desc3">Professional basketball coach with over 7 years of experience.
-                    Focuses on shooting techniques, teamwork skills,
-                    ball handling, and athletic performance.</p>
-                <p class="price">80 EGP / Session</p>
-                <button id="btn3" onclick="order('Omar Ali')">Contact the coach</button>
-                <button id="details3" onclick="goDetails('Omar Ali')">View Details</button>
-
-            </div>
-
-            <div class="product coach-card">
-                <img id="img4" src="https://static.vecteezy.com/system/resources/previews/065/434/247/non_2x/swimming-sport-logo-icon-flat-illustration-vector.jpg" alt="swimmer">
-                <h3>Youssef Adel</h3>
-                <h3 id="sport4">Swimming</h3>
-                <p id="desc4">Swimming coach with more than 15 years of experience.
-                    Specialized in teaching all age groups,
-                    improving technique, endurance, and competition preparation.</p>
-                <p class="price">120 EGP / Session</p>
-                <button id="btn4" onclick="order('Youssef Adel')">Contact the coach</button>
-                <button id="details4" onclick="goDetails('Youssef Adel')">View Details</button>
-            </div>
-        </div>
-        <div id="sportsFirebase" class="products"></div>
-    </section>
-
-    <section id="handmade" class="category" style="display:none;">
-    <h2 class="section-title"> Handmade</h2>
-        <div class="products">
-            <div class="product coach-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPYAbSu1Lk2gaa1_VZMByeW9G6tsT0EvE8vg&s" alt="Handmade">
-                <h3>Mariam Adel</h3>
-                <h3 id="sport5">Crochet and Resin Art</h3>
-                <p id="desc5">Handmade crafts instructor with 8 years of experience.
-                    Teaches crochet, embroidery, resin art,
-                    and creative DIY projects for beginners.</p>
-                <p class="price">90 EGP / Session</p>
-                <button id="btn5" onclick="order('Mariam Adel')">Contact the coach</button>
-                <button id="details5" onclick="goDetails('Mariam Adel')">View Details</button>
-
-            </div>
-            <div class="product coach-card">
-                <img src="https://logomakerr.ai/blog/wp-content/uploads/2023/11/illumine-candles-logo-design.jpg" alt="Handmade">
-                <h3>Fatma Ali</h3>
-                <h3 id="sport6">Candle and Decoration Products</h3>
-                <p id="desc6">Handmade artist with 5 years of experience in candle making,
-                    and decorative products.</p>
-                <p class="price">80 EGP / Session</p>
-                <button id="btn6" onclick="order('Fatma Ali')">Contact the coach</button>
-                <button id="details6" onclick="goDetails('Fatma Ali')">View Details</button>
-            </div>
-        </div>
-        <div id="handmadeFirebase" class="products"></div>
-    </section>
-
-    <section id="music" class="category" style="display:none;">
-        <h2 class="section-title"> music</h2>
-        <div class="products">
-            <div class="product coach-card">
-                <img src="https://thumbs.dreamstime.com/b/piano-lessons-poster-musical-note-36625482.jpg" alt="Music">
-                <h3>Nada Ahmed</h3>
-                <h3 id="sport7">Piano Lessons</h3>
-                <p id="desc7">Music instructor with 9 years of experience.
-                    Provides piano lessons and music theory training
-                    for beginners and intermediate students.</p>
-                <p class="price">130 EGP / Session</p>
-                <button id="btn7" onclick="order('Nada Ahmed')">Contact the coach</button>
-                <button id="details7" onclick="goDetails('Nada Ahmed')">View Details</button>
-            </div>
-            <div class="product coach-card">
-                <img src="https://i.etsystatic.com/18154652/r/il/f22387/1629260272/il_fullxfull.1629260272_d6io.jpg" alt="Music">
-                <h3>Omar Mostafa</h3>
-                <h3 id="sport8">Guitar</h3>
-                <p id="desc8">Guitar instructor with 7 years of experience teaching
-                    acoustic and electric guitar.</p>
-                <p class="price">120 EGP / Session</p>
-                <button id="btn8" onclick="order('Omar Mostafa')">Contact the coach</button>
-                <button id="details8" onclick="goDetails('Omar Mostafa')">View Details</button>
-            </div>
-        </div>
-        <div id="musicFirebase" class="products"></div>
-    </section>
-    <section id="programming" class="category" style="display:none;">
-        <h2 class="section-title"> programming</h2>
-        <div class="products">
-            <div class="product coach-card">
-                <img src="https://img.freepik.com/free-vector/creative-gradient-code-logo_23-2148820572.jpg?semt=ais_hybrid&w=740&q=80" alt="Programming">
-                <h3>Mohamed Khaled</h3>
-                <h3 id="sport9">Web Development</h3>
-                <p id="desc9">Software engineer with 6 years of experience in web development.
-                    Teaches HTML, CSS, JavaScript and beginner-friendly projects
-                    with practical hands-on learning.</p>
-                <p class="price">150 EGP / Session</p>
-                <button id="btn9" onclick="order('Mohamed Khaled')">Contact the coach</button>
-                <button id="details9" onclick="goDetails('Mohamed Khaled')">View Details</button>
-            </div>
-            <div class="product coach-card">
-                <img src="https://previews.123rf.com/images/captainvector/captainvector2208/captainvector220829703/189851058-problem-solving-icon.jpg" alt="Programming">
-                <h3>Ahmed Samir</h3>
-                <h3 id="sport10">Problem Solving and Automation</h3>
-                <p id="desc10">Python developer teaching programming fundamentals,
-                    problem solving, and automation.</p>
-                <p class="price">180 EGP / Session</p>
-                <button id="btn10" onclick="order('Ahmed Samir')">Contact the coach</button>
-                <button id="details10" onclick="goDetails('Ahmed Samir')">View Details</button>
-            </div>
-           <div id="programmingFirebase" class="products"></div>
-        </div>
-    </section>
-    <section id="other" class="category" style="display:none;">
-        <h2 class="section-title">Other</h2>
-        <div id="otherFirebase" class="products"></div>
-    </section>
+                <div class="product coach-card">
+                    <img src="https://media.istockphoto.com/id/1397734203/vector/couple-fitness-logo-vector.jpg?s=612x612&w=0&k=20&c=o-MflGLdwx7Z5R2ZUyOwggGNCsMabFxCkODsRg4iMY0=" alt="fitness player">
+                    <h3>Sara Mohamed</h3>
+                    <h3>Fitness</h3>
+                    <p>Certified fitness coach with more than 10 years of experience.
+                        Helps clients achieve their goals through customized workout plans,
+                        nutrition guidance, and continuous motivation.</p>
+                    <p class="price">100 EGP / Session</p>
+                    <button onclick="order('Sara Mohamed')">Contact the coach</button>
+                    <button onclick="goDetails('Sara Mohamed')">View Details</button>
+                </div>
+                
+                <div class="product coach-card">
+                    <img src="https://www.shutterstock.com/image-vector/basketball-player-silhouette-logo-vector-260nw-2717047395.jpg" alt="basketball player">
+                    <h3>Omar Ali</h3>
+                    <h3>Basketball</h3>
+                    <p>Professional basketball coach with over 7 years of experience.
+                        Focuses on shooting techniques, teamwork skills,
+                        ball handling, and athletic performance.</p>
+                    <p class="price">80 EGP / Session</p>
+                    <button onclick="order('Omar Ali')">Contact the coach</button>
+                    <button onclick="goDetails('Omar Ali')">View Details</button>
+                </div>
+                
+                <div class="product coach-card">
+                    <img src="https://static.vecteezy.com/system/resources/previews/065/434/247/non_2x/swimming-sport-logo-icon-flat-illustration-vector.jpg" alt="swimmer">
+                    <h3>Youssef Adel</h3>
+                    <h3>Swimming</h3>
+                    <p>Swimming coach with more than 15 years of experience.
+                        Specialized in teaching all age groups,
+                        improving technique, endurance, and competition preparation.</p>
+                    <p class="price">120 EGP / Session</p>
+                    <button onclick="order('Youssef Adel')">Contact the coach</button>
+                    <button onclick="goDetails('Youssef Adel')">View Details</button>
+                </div>
+                </div>
+                
+                <div id="sportsFirebase" class="products"></div>
+                </section>
+                
+                <section id="handmade" class="category" style="display:none;">
+                <h2 class="section-title">Handmade</h2>
+                <div class="products">
+                    <div class="product coach-card">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPYAbSu1Lk2gaa1_VZMByeW9G6tsT0EvE8vg&s" alt="Handmade">
+                        <h3>Mariam Adel</h3>
+                        <h3>Crochet and Resin Art</h3>
+                        <p>Handmade crafts instructor with 8 years of experience.
+                            Teaches crochet, embroidery, resin art,
+                            and creative DIY projects for beginners.</p>
+                        <p class="price">90 EGP / Session</p>
+                        <button onclick="order('Mariam Adel')">Contact the coach</button>
+                        <button onclick="goDetails('Mariam Adel')">View Details</button>
+                    </div>
+                
+                    <div class="product coach-card">
+                        <img src="https://logomakerr.ai/blog/wp-content/uploads/2023/11/illumine-candles-logo-design.jpg" alt="Handmade">
+                        <h3>Fatma Ali</h3>
+                        <h3>Candle and Decoration Products</h3>
+                        <p>Handmade artist with 5 years of experience in candle making,
+                            and decorative products.</p>
+                        <p class="price">80 EGP / Session</p>
+                        <button onclick="order('Fatma Ali')">Contact the coach</button>
+                        <button onclick="goDetails('Fatma Ali')">View Details</button>
+                    </div>
+                </div>
+                
+                <div id="handmadeFirebase" class="products"></div>
+                </section>
+                
+                <section id="music" class="category" style="display:none;">
+                <h2 class="section-title">music</h2>
+                <div class="products">
+                    <div class="product coach-card">
+                        <img src="https://thumbs.dreamstime.com/b/piano-lessons-poster-musical-note-36625482.jpg" alt="Music">
+                        <h3>Nada Ahmed</h3>
+                        <h3>Piano Lessons</h3>
+                        <p>Music instructor with 9 years of experience.
+                            Provides piano lessons and music theory training
+                            for beginners and intermediate students.</p>
+                        <p class="price">130 EGP / Session</p>
+                        <button onclick="order('Nada Ahmed')">Contact the coach</button>
+                        <button onclick="goDetails('Nada Ahmed')">View Details</button>
+                    </div>
+                
+                    <div class="product coach-card">
+                        <img src="https://i.etsystatic.com/18154652/r/il/f22387/1629260272/il_fullxfull.1629260272_d6io.jpg" alt="Music">
+                        <h3>Omar Mostafa</h3>
+                        <h3>Guitar</h3>
+                        <p>Guitar instructor with 7 years of experience teaching
+                            acoustic and electric guitar.</p>
+                        <p class="price">120 EGP / Session</p>
+                        <button onclick="order('Omar Mostafa')">Contact the coach</button>
+                        <button onclick="goDetails('Omar Mostafa')">View Details</button>
+                    </div>
+                </div>
+                
+                <div id="musicFirebase" class="products"></div>
+                </section>
+                
+                <section id="programming" class="category" style="display:none;">
+                <h2 class="section-title">programming</h2>
+                <div class="products">
+                    <div class="product coach-card">
+                        <img src="https://img.freepik.com/free-vector/creative-gradient-code-logo_23-2148820572.jpg?semt=ais_hybrid&w=740&q=80" alt="Programming">
+                        <h3>Mohamed Khaled</h3>
+                        <h3>Web Development</h3>
+                        <p>Software engineer with 6 years of experience in web development.
+                            Teaches HTML, CSS, JavaScript and beginner-friendly projects
+                            with practical hands-on learning.</p>
+                        <p class="price">150 EGP / Session</p>
+                        <button onclick="order('Mohamed Khaled')">Contact the coach</button>
+                        <button onclick="goDetails('Mohamed Khaled')">View Details</button>
+                    </div>
+                
+                    <div class="product coach-card">
+                        <img src="https://previews.123rf.com/images/captainvector/captainvector2208/captainvector220829703/189851058-problem-solving-icon.jpg" alt="Programming">
+                        <h3>Ahmed Samir</h3>
+                        <h3>Problem Solving and Automation</h3>
+                        <p>Python developer teaching programming fundamentals,
+                            problem solving, and automation.</p>
+                        <p class="price">180 EGP / Session</p>
+                        <button onclick="order('Ahmed Samir')">Contact the coach</button>
+                        <button onclick="goDetails('Ahmed Samir')">View Details</button>
+                    </div>
+                
+                    <div id="programmingFirebase" class="products"></div>
+                </div>
+                    </section>
+                    <section id="other" class="category" style="display:none;">
+                        <h2 class="section-title">Other</h2>
+                        <div id="otherFirebase" class="products"></div>
+                    </section>
 
     <!--about us section -->
     <section class="about-section">
@@ -344,9 +341,7 @@
     <section id="contact" class="contact-section">
         <h2 id="contact-title"> Contact Us</h2>
         <p id="phone">📱Phone No.: +201100351797</p>
-        <p id="whatsapp">
-        💬WhatsApp:
-        <a href="https://wa.me/201100351797">Click Here</a></p>
+        <p id="whatsapp">💬WhatsApp:<a href="https://wa.me/201100351797">Click Here</a></p>
         <p id="email">📧Email: skillmasr@gmail.com</p>
     </section>
     
@@ -355,7 +350,6 @@
     </footer>
     
     <script>
-        let editAccess = false;
         function order(product) {
             const message = `Hello, I want to book a session with ${product}`;
             window.open(
