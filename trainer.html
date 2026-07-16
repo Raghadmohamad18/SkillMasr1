@@ -159,7 +159,7 @@ label{
 <textarea id="about" placeholder="Tell us about yourself"></textarea>
 
 <label>Upload Your Photo</label>
-<input type="file" accept="image/*">
+<input type="file" id="photo" accept="image/*">
 
 <label>Upload Certificates Photos</label>
 <input type="file" accept="image/*" multiple>
@@ -213,6 +213,7 @@ form.addEventListener("submit", async function (e) {
     const password = document.getElementById("password").value;
     const price = document.getElementById("price").value;
     const about = document.getElementById("about").value;
+    const photo = document.getElementById("photo").files[0];
 
     try {
 
@@ -242,6 +243,28 @@ form.addEventListener("submit", async function (e) {
     password
 );
 
+        let imageUrl = "";
+
+if (photo) {
+
+    const formData = new FormData();
+
+    formData.append("file", photo);
+    formData.append("upload_preset", "ml_default");
+
+    const response = await fetch(
+        "https://api.cloudinary.com/v1_1/i1ia28nc/image/upload",
+        {
+            method: "POST",
+            body: formData
+        }
+    );
+
+    const data = await response.json();
+
+    imageUrl = data.secure_url;
+}
+        
 await addDoc(collection(db, "coaches"), {
     uid: userCredential.user.uid,
     fullName,
@@ -253,6 +276,7 @@ await addDoc(collection(db, "coaches"), {
     phone,
     price,
     about,
+    imageUrl
 });
 
         localStorage.setItem("loggedIn", "true");
