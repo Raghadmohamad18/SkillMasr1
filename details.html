@@ -243,6 +243,7 @@ if (id) {
     const coachSnap = await getDoc(coachRef);
 
     if (coachSnap.exists()) {
+        coach = coachSnap.data();
         coach.img = coach.imageUrl || "";
         coach.price = coach.price + " EGP / Session";
         coach.sport = coach.specialization;
