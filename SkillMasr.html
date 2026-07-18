@@ -185,7 +185,7 @@
                         Specialized in improving fitness, ball control, passing accuracy,
                         and match tactics for beginners and intermediate players.</p>
                     <p class="price">50 EGP / Session</p>
-                    <button onclick="order('Ahmed Hassan')">Contact the coach</button>
+                    <button onclick="order('01100351797','Ahmed Hassan')">Contact the coach</button>
                     <button onclick="goDetails('Ahmed Hassan')">View Details</button>
                 </div>
                 
@@ -197,7 +197,7 @@
                         Helps clients achieve their goals through customized workout plans,
                         nutrition guidance, and continuous motivation.</p>
                     <p class="price">100 EGP / Session</p>
-                    <button onclick="order('Sara Mohamed')">Contact the coach</button>
+                    <button onclick="order('01100351797','Sara Mohamed')">Contact the coach</button>
                     <button onclick="goDetails('Sara Mohamed')">View Details</button>
                 </div>
                 
@@ -209,7 +209,7 @@
                         Focuses on shooting techniques, teamwork skills,
                         ball handling, and athletic performance.</p>
                     <p class="price">80 EGP / Session</p>
-                    <button onclick="order('Omar Ali')">Contact the coach</button>
+                    <button onclick="order('01100351797','Omar Ali')">Contact the coach</button>
                     <button onclick="goDetails('Omar Ali')">View Details</button>
                 </div>
                 
@@ -221,7 +221,7 @@
                         Specialized in teaching all age groups,
                         improving technique, endurance, and competition preparation.</p>
                     <p class="price">120 EGP / Session</p>
-                    <button onclick="order('Youssef Adel')">Contact the coach</button>
+                    <button onclick="order('01100351797','Youssef Adel')">Contact the coach</button>
                     <button onclick="goDetails('Youssef Adel')">View Details</button>
                 </div>
                 </div>
@@ -238,7 +238,7 @@
                             Teaches crochet, embroidery, resin art,
                             and creative DIY projects for beginners.</p>
                         <p class="price">90 EGP / Session</p>
-                        <button onclick="order('Mariam Adel')">Contact the coach</button>
+                        <button onclick="order('01100351797','Mariam Adel')">Contact the coach</button>
                         <button onclick="goDetails('Mariam Adel')">View Details</button>
                     </div>
                 
@@ -249,7 +249,7 @@
                         <p>Handmade artist with 5 years of experience in candle making,
                             and decorative products.</p>
                         <p class="price">80 EGP / Session</p>
-                        <button onclick="order('Fatma Ali')">Contact the coach</button>
+                        <button onclick="order('01100351797','Fatma Ali')">Contact the coach</button>
                         <button onclick="goDetails('Fatma Ali')">View Details</button>
                     </div>
                 </div>
@@ -266,7 +266,7 @@
                             Provides piano lessons and music theory training
                             for beginners and intermediate students.</p>
                         <p class="price">130 EGP / Session</p>
-                        <button onclick="order('Nada Ahmed')">Contact the coach</button>
+                        <button onclick="order('01100351797','Nada Ahmed')">Contact the coach</button>
                         <button onclick="goDetails('Nada Ahmed')">View Details</button>
                     </div>
                 
@@ -277,7 +277,7 @@
                         <p>Guitar instructor with 7 years of experience teaching
                             acoustic and electric guitar.</p>
                         <p class="price">120 EGP / Session</p>
-                        <button onclick="order('Omar Mostafa')">Contact the coach</button>
+                        <button onclick="order('01100351797','Omar Mostafa')">Contact the coach</button>
                         <button onclick="goDetails('Omar Mostafa')">View Details</button>
                     </div>
                 </div>
@@ -294,7 +294,7 @@
                             Teaches HTML, CSS, JavaScript and beginner-friendly projects
                             with practical hands-on learning.</p>
                         <p class="price">150 EGP / Session</p>
-                        <button onclick="order('Mohamed Khaled')">Contact the coach</button>
+                        <button onclick="order('01100351797','Mohamed Khaled')">Contact the coach</button>
                         <button onclick="goDetails('Mohamed Khaled')">View Details</button>
                     </div>
                 
@@ -305,7 +305,7 @@
                         <p>Python developer teaching programming fundamentals,
                             problem solving, and automation.</p>
                         <p class="price">180 EGP / Session</p>
-                        <button onclick="order('Ahmed Samir')">Contact the coach</button>
+                        <button onclick="order('01100351797','Ahmed Samir')">Contact the coach</button>
                         <button onclick="goDetails('Ahmed Samir')">View Details</button>
                     </div>
                 </div>
@@ -339,24 +339,38 @@
     </footer>
     
     <script>
-        function order(product) {
-            const message = `Hello, I want to book a session with ${product}`;
-            window.open(
-                `https://wa.me/201100351797?text=${encodeURIComponent(message)}`,
-                "_blank" );}
+        function order(phone, product) {const message = `Hello, I want to book a session with ${product}`;
+    window.open(`https://wa.me/2${phone}?text=${encodeURIComponent(message)}`,
+        "_blank"
+    );
+}
         function showCategory(categoryId){
             const sections =
             document.querySelectorAll('.category');
             sections.forEach(section=>{
                 section.style.display='none';});
             document.getElementById(categoryId).style.display='block';}
-        function goDetails(name){
-            if(localStorage.getItem("loggedIn") !== "true"){
-                localStorage.setItem("coachName", name);
-                window.location.href = "log.html";
-                return;}
-        window.location.href =
-        "details.html?name=" + encodeURIComponent(name);}
+                function goDetails(name){
+                        if(localStorage.getItem("loggedIn") !== "true"){
+                            localStorage.setItem("coachName", name);
+                            window.location.href="log.html";
+                            return;
+                        }
+                    
+                        window.location.href =
+                        "details.html?name=" + encodeURIComponent(name);
+                    }
+                    
+                    function goDetailsFirebase(id){
+                        if(localStorage.getItem("loggedIn") !== "true"){
+                            localStorage.setItem("coachId", id);
+                            window.location.href="log.html";
+                            return;
+                        }
+                    
+                        window.location.href =
+                        "details.html?id=" + id;
+                    }
             const search = document.getElementById("search");
             search.addEventListener("input", function () {
             const value = this.value.toLowerCase();
@@ -406,12 +420,8 @@
         <h3>${coach.specialization}</h3>
         <p>${coach.about}</p>
         <p class="price">${coach.price} EGP / Session</p>
-        <button onclick="order('${coach.fullName}')">
-    Contact Coach
-    </button>
-    <button onclick="goDetails('${coach.fullName}')">
-    View Details
-</button>
+        <button onclick="order('${coach.phone}','${coach.fullName}')">Contact Coach</button>
+        <button onclick="goDetailsFirebase('${doc.id}')">View Details</button>
 </div>`;
 });
 </script>
