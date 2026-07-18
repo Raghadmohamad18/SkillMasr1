@@ -258,7 +258,7 @@ if (!coach) {
     document.body.innerHTML = "<h2>Coach not found</h2>";
     throw new Error("No coach found");
 }
-document.getElementById("name").textContent = coach.name;
+document.getElementById("name").textContent = coach.name || coach.fullName;
 document.getElementById("sport").textContent = coach.sport;
 document.getElementById("img").src = coach.img;
 document.getElementById("area").textContent = coach.area;
@@ -283,8 +283,5 @@ coach.trainingPlaces.forEach(imgUrl => {
     placesDiv.appendChild(img);
 });
 </script>
-
 </body>
 </html>
-
-
