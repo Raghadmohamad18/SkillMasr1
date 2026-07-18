@@ -275,9 +275,20 @@ for (const file of placeFiles) {
     const data = await res.json();
     trainingPlaces.push(data.secure_url);
 }
-await addDoc(collection(db, "coaches"), {
-    uid: userCredential.user.uid,
-    fullName, email,category,specialization,governorate, area,phone,price,about,imageUrl,certs,trainingPlaces});
+        await addDoc(collection(db, "coaches"), {
+            fullName,
+            email,
+            category,
+            specialization,
+            governorate,
+            area,
+            phone,
+            price,
+            about,
+            imageUrl,
+            certs,
+            trainingPlaces
+        });
         localStorage.setItem("loggedIn", "true");
         alert("تم حفظ البيانات بنجاح");
         window.location.href = "index.html";
