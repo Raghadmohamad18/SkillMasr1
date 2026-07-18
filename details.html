@@ -244,9 +244,11 @@ if (id) {
 
     if (coachSnap.exists()) {
         coach = coachSnap.data();
-        coach.img = coach.imageUrl || "https://cdn-icons-png.flaticon.com/512/149/149071.png";
-        coach.certs = [];
-        coach.trainingPlaces = [];
+        coach.img = coach.imageUrl;
+        coach.price = coach.price + " EGP / Session";
+        coach.sport = coach.specialization;
+        coach.certs = coach.certs || [];
+        coach.trainingPlaces = coach.trainingPlaces || [];
     }
 } else {
     const name = params.get("name");
