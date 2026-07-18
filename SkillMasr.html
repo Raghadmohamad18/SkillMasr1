@@ -373,6 +373,9 @@
                         window.location.href =
                         "details.html?id=" + id;
                     }
+                        window.order = order;
+                        window.goDetails = goDetails;
+                        window.goDetailsFirebase = goDetailsFirebase;
             const search = document.getElementById("search");
             search.addEventListener("input", function () {
             const value = this.value.toLowerCase();
