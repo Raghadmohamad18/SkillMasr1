@@ -203,7 +203,6 @@ form.addEventListener("submit", async function (e) {
 
     const fullName = document.getElementById("fullName").value;
     const email = document.getElementById("email").value;
-
     let category = document.getElementById("category").value;
     let specialization = document.getElementById("specialization").value;
     const governorate = document.getElementById("governorate").value;
@@ -213,7 +212,8 @@ form.addEventListener("submit", async function (e) {
     const price = document.getElementById("price").value;
     const about = document.getElementById("about").value;
     const photo = document.getElementById("photo").files[0];
-
+    const certFiles = document.getElementById("certificates").files;
+    const placeFiles = document.getElementById("trainingPlaces").files;
     try {
 
         if (fullName == "") {
@@ -259,28 +259,49 @@ if (photo) {
     console.log(data);
     imageUrl = data.secure_url;
 }    
+        const certs = [];
+const trainingPlaces = [];
+
+for (const file of certFiles) {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "rbqrpayg");
+
+    const res = await fetch(
+        "https://api.cloudinary.com/v1_1/i1ia28nc/image/upload",
+        {
+            method: "POST",
+            body: formData
+        }
+    );
+
+    const data = await res.json();
+    certs.push(data.secure_url);
+}
+
+for (const file of placeFiles) {
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "rbqrpayg");
+
+    const res = await fetch(
+        "https://api.cloudinary.com/v1_1/i1ia28nc/image/upload",
+        {
+            method: "POST",
+            body: formData
+        }
+    );
+
+    const data = await res.json();
+    trainingPlaces.push(data.secure_url);
+}
 await addDoc(collection(db, "coaches"), {
     uid: userCredential.user.uid,
-    fullName,
-    email,
-    category,
-    specialization,
-    governorate,
-    area,
-    phone,
-    price,
-    about,
-    imageUrl
-    certs
-    trainingPlaces
-});
+    fullName, email,category,specialization,governorate, area,phone,price,about,imageUrl,certs,trainingPlaces});
         localStorage.setItem("loggedIn", "true");
         alert("تم حفظ البيانات بنجاح");
         window.location.href = "index.html";
-    } catch (error) {
-        alert(error.message);
-    }
-
+    } catch (error) {alert(error.message);}
 });
     </script>
 </body>
