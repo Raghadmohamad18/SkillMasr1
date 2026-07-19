@@ -248,31 +248,31 @@
          document.getElementById("price").textContent = coach.price;
          document.getElementById("about").textContent = coach.about;
          const ul = document.getElementById("certs");
-
-coach.certs.forEach(cert => {
-    const li = document.createElement("li");
-
-    const img = document.createElement("img");
-    img.src = cert;
-    img.style.width = "150px";
-    img.style.margin = "10px";
-    img.style.borderRadius = "10px";
-
-    li.appendChild(img);
-    ul.appendChild(li);
-});
-
-const placesDiv = document.getElementById("places");
-
-coach.trainingPlaces.forEach(imgUrl => {
-    const img = document.createElement("img");
-    img.src = imgUrl;
-    img.style.width = "150px";
-    img.style.margin = "10px";
-    img.style.borderRadius = "10px";
-
-    placesDiv.appendChild(img);
-});
+         
+         coach.certs.forEach(cert => {
+         const li = document.createElement("li");
+         
+         const img = document.createElement("img");
+         img.src = cert;
+         img.style.width = "150px";
+         img.style.margin = "10px";
+         img.style.borderRadius = "10px";
+         
+         li.appendChild(img);
+         ul.appendChild(li);
+         });
+         
+         const placesDiv = document.getElementById("places");
+         
+         coach.trainingPlaces.forEach(imgUrl => {
+         const img = document.createElement("img");
+         img.src = imgUrl;
+         img.style.width = "150px";
+         img.style.margin = "10px";
+         img.style.borderRadius = "10px";
+         
+         placesDiv.appendChild(img);
+         });
       </script>
    </body>
 </html>
