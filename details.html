@@ -203,14 +203,8 @@
          phone:"+20 116 777 8888",
          price:"180 EGP / Session",
          about:"Python developer focused on problem solving, automation, and beginner programming training.",
-         certs:[
-  "https://....certificate1.jpg",
-  "https://....certificate2.jpg"
-]
-        trainingPlaces: [
-"https://res.cloudinary.com/.../image1.jpg",
-"https://res.cloudinary.com/.../image2.jpg"
-]
+         certs:["Python Certificate","Automation Course"],
+         trainingPlaces:["https://media.licdn.com/dms/image/v2/C4D1BAQEr7RDuKau1iw/company-background_10000/company-background_10000/0/1583180785548/robotocodingacademy_cover?e=2147483647&v=beta&t=mTDVqfyJBuknqfJS9rm_i3vbMXxWlOrvFWsABakww-0"]
          }
          };
           import { db } from "./firebase.js";
@@ -266,8 +260,8 @@
          
          li.appendChild(img);
          ul.appendChild(li);
-         }const placesDiv = document.getElementById("places");
-});
+         const placesDiv = document.getElementById("places");
+
 coach.trainingPlaces.forEach(imgUrl => {
     const img = document.createElement("img");
     img.src = imgUrl;
