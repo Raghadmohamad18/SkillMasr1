@@ -1,107 +1,104 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Sign Up</title>
-  <style>
-    body{
-    margin:0;
-    background:#F5F5F5;
-    font-family:Arial,sans-serif;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-}
-.form{
-    background:white;
-    width:90%;
-    max-width:500px;
-    padding:35px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-    text-align:center;
-}
-h2{
-    color:#1F1F1F;
-    margin-bottom:25px;
-}
-input{
-    width:100%;
-    padding:12px;
-    margin:12px 0;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:15px;
-    box-sizing:border-box;
-}
-button{
-    width:100%;
-    height:45px;
-    margin-top:15px;
-    border:none;
-    border-radius:8px;
-    background:#C62828;
-    color:white;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    transition:.3s;
-}
-button:hover{
-    background:#388E3C;
-}
-  </style>
-</head>
-
-<body>
-<div class="form">
-  <h2>Sign Up</h2>
-  <form id="signupForm">
-    <input type="text" id="name" placeholder="Full Name" required>
-    <input type="email" id="email" placeholder="Email" required>
-    <input type="password" id="password" placeholder="Password" required>
-    <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
-    <button type="submit">Create Account</button>
-  </form>
-
-</div>
-
-<script type="module">
-  import { auth, db } from "./firebase.js";
-  import {
-  createUserWithEmailAndPassword
-  } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
-  import {
-  collection,
-  addDoc
-  } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
-  const form = document.getElementById("signupForm");
-  form.addEventListener("submit", async(e)=>{
-  e.preventDefault();
-  const name=document.getElementById("name").value;
-  const email=document.getElementById("email").value;
-  const password=document.getElementById("password").value;
-  const confirmPassword=document.getElementById("confirmPassword").value;
-  if(password!==confirmPassword){
-  alert("Passwords do not match");
-  return;}
-try{
-const userCredential=
-await createUserWithEmailAndPassword(
-auth,
-email,
-password);
-await addDoc(collection(db,"trainees"),{
-    uid:userCredential.user.uid,
-    name,
-    email,});
-localStorage.setItem("loggedIn", "true");
-localStorage.setItem("coachName", name);
-alert("Account created successfully");
-window.location.href = "SkillMasr.html";
-} catch(error){
-    alert(error.message);}
-});
-</script>
-</body>
+   <head>
+      <title>Sign Up</title>
+      <style>
+         body{
+         margin:0;
+         background:#F5F5F5;
+         font-family:Arial,sans-serif;
+         display:flex;
+         justify-content:center;
+         align-items:center;
+         min-height:100vh;
+         }
+         .form{
+         background:white;
+         width:90%;
+         max-width:500px;
+         padding:35px;
+         border-radius:15px;
+         box-shadow:0 5px 15px rgba(0,0,0,.15);
+         text-align:center;
+         }
+         h2{
+         color:#1F1F1F;
+         margin-bottom:25px;
+         }
+         input{
+         width:100%;
+         padding:12px;
+         margin:12px 0;
+         border:1px solid #ccc;
+         border-radius:8px;
+         font-size:15px;
+         box-sizing:border-box;
+         }
+         button{
+         width:100%;
+         height:45px;
+         margin-top:15px;
+         border:none;
+         border-radius:8px;
+         background:#C62828;
+         color:white;
+         font-size:16px;
+         font-weight:bold;
+         cursor:pointer;
+         transition:.3s;
+         }
+         button:hover{
+         background:#388E3C;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="form">
+         <h2>Sign Up</h2>
+         <form id="signupForm">
+            <input type="text" id="name" placeholder="Full Name" required>
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <button type="submit">Create Account</button>
+         </form>
+      </div>
+      <script type="module">
+         import { auth, db } from "./firebase.js";
+         import {
+         createUserWithEmailAndPassword
+         } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+         import {
+         collection,
+         addDoc
+         } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+         const form = document.getElementById("signupForm");
+         form.addEventListener("submit", async(e)=>{
+         e.preventDefault();
+         const name=document.getElementById("name").value;
+         const email=document.getElementById("email").value;
+         const password=document.getElementById("password").value;
+         const confirmPassword=document.getElementById("confirmPassword").value;
+         if(password!==confirmPassword){
+         alert("Passwords do not match");
+         return;}
+         try{
+         const userCredential=
+         await createUserWithEmailAndPassword(
+         auth,
+         email,
+         password);
+         await addDoc(collection(db,"trainees"),{
+           uid:userCredential.user.uid,
+           name,
+           email,});
+         localStorage.setItem("loggedIn", "true");
+         localStorage.setItem("coachName", name);
+         alert("Account created successfully");
+         window.location.href = "SkillMasr.html";
+         } catch(error){
+           alert(error.message);}
+         });
+      </script>
+   </body>
 </html>
