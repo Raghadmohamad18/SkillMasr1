@@ -3,7 +3,7 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Coach Registration</title>
+      <title>تسجيل المدرب</title>
       <style>
          body{
          background:#F5F5F5;
@@ -74,72 +74,72 @@
    <body>
       <center>
          <div class="form-box">
-            <h2>Coach Registration Form</h2>
+            <h2>بيانات عن المدرب</h2>
             <form id="coachForm">
-               <label>Full Name</label>
-               <input type="text" id="fullName" placeholder="Enter your full name" required>
-               <label>Email</label>
-               <input type="email" id="email" placeholder="Enter your email" required>
-               <label>choose your category</label>
+               <label>الاسم كامل</label>
+               <input type="text" id="fullName" placeholder="ادخله هنا" required>
+               <label>البريد الالكتروني</label>
+               <input type="email" id="email" placeholder="ادخله هنا" required>
+               <label>المجال</label>
                <select id="category" required>
-                  <option value="">Select Category</option>
-                  <option value="Sports">Sports</option>
-                  <option value="Handmade">Handmade</option>
-                  <option value="Music">Music</option>
-                  <option value="Programming">Programming</option>
-                  <option value="Other">Other</option>
+                  <option value="">اختار مجالك</option>
+                  <option value="Sports">رياضة</option>
+                  <option value="Handmade">حرف يدوية</option>
+                  <option value="Music">موسيقى و غناء</option>
+                  <option value="Programming">برمجة</option>
+                  <option value="Other">غيره</option>
                </select>
-               <label>Write your Skill / Sport</label>
+               <label>اكتب الرياضة او المهارة</label>
                <input type="text"
                   id="specialization"
-                  placeholder="Example: Football, Volleyball, Guitar, Python">
-               <label>Governorate</label>
+                  placeholder="مثال:كرة القدم,رسم,العزف">
+               <label>محافظة</label>
                <select id="governorate" required>
-                  <option value="">Select Governorate</option>
-                  <option>Alexandria</option>
-                  <option>Aswan</option>
-                  <option>Asyut</option>
-                  <option>Beheira</option>
-                  <option>Beni Suef</option>
-                  <option>Cairo</option>
-                  <option>Dakahlia</option>
-                  <option>Damietta</option>
-                  <option>Fayoum</option>
-                  <option>Gharbia</option>
-                  <option>Giza</option>
-                  <option>Ismailia</option>
-                  <option>Kafr El Sheikh</option>
-                  <option>Luxor</option>
-                  <option>Matrouh</option>
-                  <option>Minya</option>
-                  <option>Monufia</option>
-                  <option>New Valley</option>
-                  <option>North Sinai</option>
-                  <option>Port Said</option>
-                  <option>Qalyubia</option>
-                  <option>Qena</option>
-                  <option>Red Sea</option>
-                  <option>Sharqia</option>
-                  <option>Sohag</option>
-                  <option>South Sinai</option>
-                  <option>Suez</option>
+                  <option value="">اختر المحافظة</option>
+                  <option>الإسكندرية</option>
+                  <option>أسوان</option>
+                  <option>أسيوط</option>
+                  <option>البحيرة</option>
+                  <option>بني سويف</option>
+                  <option>القاهرة</option>
+                  <option>الدقهلية</option>
+                  <option>دمياط</option>
+                  <option>الفيوم</option>
+                  <option>الغربية</option>
+                  <option>الجيزة</option>
+                  <option>الإسماعيلية</option>
+                  <option>كفر الشيخ</option>
+                  <option>الأقصر</option>
+                  <option>مطروح</option>
+                  <option>المنيا</option>
+                  <option>المنوفية</option>
+                  <option>الوادي الجديد</option>
+                  <option>شمال سيناء</option>
+                  <option>بورسعيد</option>
+                  <option>القليوبية</option>
+                  <option>قنا</option>
+                  <option>البحر الأحمر</option>
+                  <option>الشرقية</option>
+                  <option>سوهاج</option>
+                  <option>جنوب سيناء</option>
+                  <option>السويس</option>
                </select>
-               <label>Area</label>
-               <input type="text" id="area" placeholder="Smouha">
-               <label>Phone Number</label>
+               <label>المنطقة</label>
+               <input type="text" id="area" placeholder="مثال: سموحة,اكتوبر">
+               <label>رقم الهاتف</label>
                <input type="tel" id="phone" placeholder="01XXXXXXXXX">
-               <label>Training Price per session</label>
-               <input type="number" id="price" placeholder="Price in EGP">
-               <label>About You</label>
-               <textarea id="about" placeholder="Tell us about yourself"></textarea>
-               <label>Upload Your Photo</label>
+               <label>سعر التدريب</label>
+               <input type="number" id="price" placeholder="السعر بالجنيه المصري">
+               <label>تفاصيل عنك</label>
+               <textarea id="about" placeholder="اخبرنا اكثر عن خبرتك و مجالك"></textarea>
+               <label>صورة للمدرب</label>
                <input type="file" id="photo" accept="image/*">
-               <label>Upload Certificates Photos</label>
+               <label>صور لشهادات المدرب</label>
                <input id="certificates" type="file" multiple accept="image/*">
-               <label>Upload Training Place Photos</label>
+               <label>صور لمكان التدريب</label>
                <input id="trainingPlaces" type="file" multiple accept="image/*">
                <button type="submit">
-               Register
+               سجل
                </button>
             </form>
          </div>
